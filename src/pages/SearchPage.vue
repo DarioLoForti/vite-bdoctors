@@ -14,16 +14,15 @@ export default {
         }
     },
     created(){
-
+        this.getDoctors();
     },
     methods: {
-        /* getDoctors(){
-            axios.get(``,{
-
-            }).then((response)=>{
-
+        getDoctors(){
+            axios.get(`${this.store.baseUrl}/api/doctors`).then((response)=>{
+                this.doctors = response.data.results;
+                console.log(this.doctors);
             })
-        } */
+        }
     }
 }
 </script>
@@ -33,6 +32,10 @@ export default {
             <div class="row">
                 <div class="col-12 text-center my-4">
                     <h1>BDoctors; Be Doctors!</h1>
+                </div>
+                <div v-for="doctor, index in this.doctors">
+                    {{doctor.user.name}}
+                    {{doctor.user.surname}}
                 </div>
             </div>
         </div>
