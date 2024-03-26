@@ -21,6 +21,37 @@ export default {
 <style lang="scss" scoped>
     header{
         width: 100%;
-        background-color: #ffa500;
+        background-color: #285a8c;
+        padding-top: 20px;
+
+        ul{
+            display: flex;
+            list-style: none;
+            li{
+                line-height: 50px;
+                color: black;
+                margin-right: 10px;
+                padding: 5px 4px;
+    
+                a{
+                    text-decoration: none;
+                    color: black;
+                    padding: 5px 4px;
+                    
+                    &:hover{
+                        color: rgb(63, 63, 63);
+                        border-radius: 5px;
+    
+                        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                        
+                    }
+                }
+            }
+        }
+        .misura-logo{
+            width: 150px;
+            
+        }
     }
+    
 </style>
