@@ -6,7 +6,7 @@ export default {
 <template lang="">
  <header>
     <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-4">
                 <router-link :to="{ name: 'home' }">
                     <img class='misura-logo' src="../../public/4.jpeg" alt="">
@@ -31,28 +31,24 @@ export default {
 header{
     width: 100%;
     background-color: #285a8c;
-    padding-top: 20px;
   
     ul{
         display: flex;
         list-style: none;
         li{
+            font-size: 25px;
             line-height: 50px;
-            color: black;
             margin-right: 10px;
             padding: 5px 4px;
+            
 
             a{
                 text-decoration: none;
-                color: black;
+                color: white;
                 padding: 5px 4px;
                 
                 &:hover{
-                    color: rgb(63, 63, 63);
-                    border-radius: 5px;
-
-                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-                    
+                    color: #003366;                    
                 }
             }
         }
