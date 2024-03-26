@@ -14,5 +14,5 @@ export default {
     <router-view></router-view>
 </template>
 <style lang="scss">
-  @use './styles/general.scss' as *;
+  @use './styles/generals.scss' as *;
 </style>
