@@ -10,9 +10,9 @@ export default {
 </script>
 <template lang="">
     <Header/>
-    <Footer/>
     <router-view></router-view>
+    <Footer/>
 </template>
 <style lang="scss">
-  @use './styles/general.scss' as *;
+  @use 'assets/styles/generals.scss' as *;
 </style>
