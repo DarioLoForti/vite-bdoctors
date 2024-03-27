@@ -12,9 +12,10 @@ export default {
         return{
             store,
             doctors: [],
-            specialization: '', /* allergologia */
-            surname: '',
-            city: '', /* Roma */
+            specialization: '',
+            namestring: '',
+            city: '',
+            success: null,
         }
     },
     created(){
@@ -27,25 +28,28 @@ export default {
             {
                 params:{
                     specialization: this.specialization,
-                    surname: this.surname,
+                    namestring: this.namestring.split(" ").join(""),
                     city: this.city
                 }
             }).then((response)=>{
-                this.doctors = response.data.response;
-                console.log(this.doctors);
-            })
-        },
-        getDoctor(){
-            axios.get(`${this.store.baseUrl}/api/doctors`,
-            {
-                params:{
-                    surname: this.surname,  
-                }
-            }).then((response)=>{
-                this.doctors = response.data.response;
-            })
-        },
+                if(response.data.success){
+                    this.success = true;
 
+                    if(Array.isArray(response.data.response)){
+                        this.doctors = response.data.response;
+                        /* console.log(this.doctors); */
+                    }
+                    else{
+                        this.doctors = [];
+                        this.doctors.push(response.data.response);
+                        /* console.log(this.doctors); */
+                    }
+                }
+                else{
+                    this.success = false;
+                }
+            })
+        },
         getSpecializations(){
             axios.get(`${this.store.baseUrl}/api/specializations`).then((response)=>{
                 store.specializations = response.data.response;
@@ -64,16 +68,7 @@ export default {
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label for="name">Cerca il tuo dottore</label>
-                                <div class="input-group">
-                                    <input class="form-control" name="surname" type="text" v-model="this.surname" @keyup.enter="getDoctor()" placeholder="Inserisci il cognome del dottore, completo o parziale (eg. 'Simone' o 'si')">
-                                    <button class="btn btn-sm btn-cerca" type="submit" @click="getDoctor()">Cerca!</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 mb-3 mb-md-0 ">
-                            <label for="specialization" class="ms-1 mb-2">In cosa vuoi sia specializzato il dottore?</label>
+                            <label class="ms-1 mb-2" for="specialization">In cosa vuoi sia specializzato il dottore?</label>
                             <select class="form-select" name="specialization" id="specialization" v-model="this.specialization" @change="getDoctors()">
                                 <option value="" selected>Niente</option>
                                 <option v-for="specialization, key in store.specializations" :value="specialization['slug']">{{specialization['name']}}</option>
@@ -83,17 +78,29 @@ export default {
                             <div class="form-group">
                                 <label for="city" class="ms-1 mb-2">Da che città cerchi il tuo dottore?</label>
                                 <div class="input-group">
-                                    <input class="form-control" name="city" type="text" v-model="this.city" @keyup.enter="getDoctors()" placeholder="Inserisci il nome di una città, completo o parziale (eg. 'Roma' o 'Ro')">
+                                    <input class="form-control" name="city" type="text" v-model="this.city" @keyup="getDoctors()" placeholder="Inserisci il nome di una città, completo o parziale (eg. 'Roma' o 'Ro')">
+                                    <button class="btn btn-sm btn-cerca" type="submit" @click="getDoctors()">Cerca!</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="form-group">
+                                <label for="name" class="ms-1 mb-2">Conosci già il tuo dottore?</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="namestring" type="text" v-model="this.namestring" @keyup="getDoctors()" placeholder="Inserisci il cognome del dottore, completo o parziale (eg. 'Simone' o 'si')">
                                     <button class="btn btn-sm btn-cerca" type="submit" @click="getDoctors()">Cerca!</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div v-if="this.doctors.length != 0" class="container my-5">
-                    <div class="row m-2">
-                        <DoctorCard class="mb-3" v-for="doctor, index in this.doctors" :key="index" :doctor="doctor"/>
+                <div v-if="this.doctors.length != 0 && this.success" class="container my-5">
+                    <div class="row g-2">
+                        <DoctorCard v-for="doctor, index in this.doctors" :key="index" :doctor="doctor"/>
                     </div>
+                </div>
+                <div v-else class="my-5">
+                    Nessun medico trovato che soddisfi la ricerca.
                 </div>
             </div>
         </div>
