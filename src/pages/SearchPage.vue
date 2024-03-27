@@ -13,6 +13,7 @@ export default {
             store,
             doctors: [],
             specialization: '', /* allergologia */
+            surname: '',
             city: '', /* Roma */
         }
     },
@@ -26,12 +27,25 @@ export default {
             {
                 params:{
                     specialization: this.specialization,
+                    surname: this.surname,
                     city: this.city
+                }
+            }).then((response)=>{
+                this.doctors = response.data.response;
+                console.log(this.doctors);
+            })
+        },
+        getDoctor(){
+            axios.get(`${this.store.baseUrl}/api/doctors`,
+            {
+                params:{
+                    surname: this.surname,  
                 }
             }).then((response)=>{
                 this.doctors = response.data.response;
             })
         },
+
         getSpecializations(){
             axios.get(`${this.store.baseUrl}/api/specializations`).then((response)=>{
                 store.specializations = response.data.response;
@@ -49,14 +63,23 @@ export default {
                 </div>
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group">
+                                <label for="name">Cerca il tuo dottore</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="surname" type="text" v-model="this.surname" @keyup.enter="getDoctor()" placeholder="Inserisci il cognome del dottore, completo o parziale (eg. 'Simone' o 'si')">
+                                    <button class="btn btn-sm btn-success" type="submit" @click="getDoctor()">Cerca!</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
                             <label for="specialization">In cosa vuoi sia specializzato il dottore?</label>
                             <select class="form-select" name="specialization" id="specialization" v-model="this.specialization" @change="getDoctors()">
                                 <option value="" selected>Niente</option>
                                 <option v-for="specialization, key in store.specializations" :value="specialization['slug']">{{specialization['name']}}</option>
                             </select>
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-4">
                             <div class="form-group">
                                 <label for="city">Da che città cerchi il tuo dottore?</label>
                                 <div class="input-group">
