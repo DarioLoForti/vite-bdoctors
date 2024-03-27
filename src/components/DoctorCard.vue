@@ -31,4 +31,11 @@ export default {
 </template>
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
+
+.my-img{
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    object-position: 25% 25%; 
+}
 </style>

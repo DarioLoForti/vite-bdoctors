@@ -66,9 +66,4 @@ export default {
     .my-text{
         color: #285a8c;
     }
-
-    .my-img{
-        width: 100%;
-        max-height: 250px
-    }
 </style>
