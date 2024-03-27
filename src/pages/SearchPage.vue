@@ -29,7 +29,7 @@ export default {
                     city: this.city
                 }
             }).then((response)=>{
-                this.doctors = response.data.results;
+                this.doctors = response.data.response;
             })
         },
         getSpecializations(){
