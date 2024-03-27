@@ -58,19 +58,17 @@ export default {
                 <div class="col-12">
                     <h2>I dottori</h2>
                 </div>
-                <div class="col-4 my-3" v-for="doctor, index in this.doctors">
-                    <div class="card">
-                        <img class="my-img" :src="doctor.image" :alt="doctor.user.name">
-                        <div class="card-body">
-                            <h3>
-                                {{doctor.user.name}}
-                                {{doctor.user.surname}}
-                            </h3>
-                            <p>{{doctor.city}}</p>
-                            <!-- <p>Specializzazioni: {{specialization.name}}</p> -->
-                        </div>
+                <div class="col-4 my-3" v-for="(doctor, index) in doctors" :key="index">
+                <div class="doctor-card card">
+                    <div class="doctor-image" :style="{ backgroundImage: 'url(' + doctor.image + ')' }"></div>
+                    <div class="card-body">
+                        <h3>{{ doctor.user.name }} {{ doctor.user.surname }}</h3>
+                        <p>{{ doctor.city }}</p>
+                        <!-- <p>Specializzazioni: {{ specialization.name }}</p> -->
                     </div>
                 </div>
+            </div>
+
             </div>
             <hr class="my-5">
             <div class="row my-5">
@@ -113,4 +111,23 @@ export default {
         width: 100%;
         max-height: 250px
     }
+    .doctor-card {
+    width: 100%;
+    border: 1px solid #ccc;
+    overflow: hidden; 
+    }
+
+    .doctor-image {
+        width: 100%;
+        height: 300px; 
+        background-size: cover; 
+        background-position: top; 
+        
+    }
+
+    
+
+    
+
+
 </style>
