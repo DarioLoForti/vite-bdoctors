@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import HomePage from './pages/HomePage.vue';
 import SearchPage from './pages/SearchPage.vue';
+import DoctorPage from './pages/DoctorPage.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -16,6 +17,11 @@ const router = createRouter({
             name: 'search',
             component: SearchPage
         },
+        {
+            path: '/doctor/:slug',
+            name: 'doctor',
+            component: DoctorPage
+        }
     ]
 });
 export { router }
