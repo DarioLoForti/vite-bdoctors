@@ -1,6 +1,7 @@
 <script>
 export default {
     
+
 }
 </script>
 <template lang="">
@@ -19,6 +20,10 @@ export default {
                     </li>
                     <li>
                         <router-link :to="{ name: 'search' } ">Dottori</router-link>
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:8000/login" > Login</a>
+                        <!-- <a @click="redirectToLogin">Login</a> -->
                     </li>
                     
                 </ul>

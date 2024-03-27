@@ -20,15 +20,19 @@ export default {
     },
     methods: {
         getDoctors(){
-            axios.get(`${this.store.baseUrl}/api/doctors`).then((response)=>{
-                this.doctors = response.data.results;
-
+            axios.get(`${this.store.baseUrl}/api/doctors`,
+            {
+                params:{
+                    specialization: this.specialization,
+                    city: this.city
+                }
+            }).then((response)=>{
+                this.doctors = response.data.response;
             })
         },
         getSpecializations(){
             axios.get(`${this.store.baseUrl}/api/specializations`).then((response)=>{
-                this.specializations = response.data.response;
-
+                store.specializations = response.data.response;
             })
         }
     }
