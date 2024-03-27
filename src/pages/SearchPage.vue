@@ -12,9 +12,9 @@ export default {
         return{
             store,
             doctors: [],
-            specialization: '', /* allergologia */
+            specialization: '',
             surname: '',
-            city: '', /* Roma */
+            city: '',
         }
     },
     created(){
@@ -31,21 +31,17 @@ export default {
                     city: this.city
                 }
             }).then((response)=>{
-                this.doctors = response.data.response;
-                console.log(this.doctors);
-            })
-        },
-        getDoctor(){
-            axios.get(`${this.store.baseUrl}/api/doctors`,
-            {
-                params:{
-                    surname: this.surname,  
+                if(Array.isArray(response.data.response)){
+                    this.doctors = response.data.response;
+                    console.log(this.doctors);
                 }
-            }).then((response)=>{
-                this.doctors = response.data.response;
+                else{
+                    this.doctors = [];
+                    this.doctors.push(response.data.response);
+                    console.log(this.doctors);
+                }
             })
         },
-
         getSpecializations(){
             axios.get(`${this.store.baseUrl}/api/specializations`).then((response)=>{
                 store.specializations = response.data.response;
@@ -63,27 +59,27 @@ export default {
                 </div>
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label for="name">Cerca il tuo dottore</label>
-                                <div class="input-group">
-                                    <input class="form-control" name="surname" type="text" v-model="this.surname" @keyup.enter="getDoctor()" placeholder="Inserisci il cognome del dottore, completo o parziale (eg. 'Simone' o 'si')">
-                                    <button class="btn btn-sm btn-success" type="submit" @click="getDoctor()">Cerca!</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-6">
                             <label for="specialization">In cosa vuoi sia specializzato il dottore?</label>
                             <select class="form-select" name="specialization" id="specialization" v-model="this.specialization" @change="getDoctors()">
                                 <option value="" selected>Niente</option>
                                 <option v-for="specialization, key in store.specializations" :value="specialization['slug']">{{specialization['name']}}</option>
                             </select>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label for="city">Da che città cerchi il tuo dottore?</label>
                                 <div class="input-group">
                                     <input class="form-control" name="city" type="text" v-model="this.city" @keyup.enter="getDoctors()" placeholder="Inserisci il nome di una città, completo o parziale (eg. 'Roma' o 'Ro')">
+                                    <button class="btn btn-sm btn-success" type="submit" @click="getDoctors()">Cerca!</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="name">Conosci già il tuo dottore?</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="surname" type="text" v-model="this.surname" @keyup.enter="getDoctors()" placeholder="Inserisci il cognome del dottore, completo o parziale (eg. 'Simone' o 'si')">
                                     <button class="btn btn-sm btn-success" type="submit" @click="getDoctors()">Cerca!</button>
                                 </div>
                             </div>
