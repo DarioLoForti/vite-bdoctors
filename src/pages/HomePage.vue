@@ -36,6 +36,11 @@ export default {
                     <p class=" text-light fs-5">Filtra le tue ricerche per città e/o specializzazioni. <br>
                         Leggi le recensioni, osserva i profili e scegli il meglio per te!
                     </p>
+                    <h2 class=" text-light text-center  mt-5">Sei un Medico?</h2>
+                    <div class="d-flex justify-content-around mt-5">
+                        <a class="btn btn-color-blu mt-4" href="http://127.0.0.1:8000/login">Login</a>
+                        <a class="btn btn-color-blu mt-4" href="http://127.0.0.1:8000/register" > Registrati</a>
+                    </div>
                 </div>
                 <img class='me-5' src="../../public/doctor-1.png" alt="">
             </div>
@@ -133,5 +138,16 @@ export default {
             background-color: white;
             color:  #66cc99;
         }
+    }
+        .btn-color-blu{
+        
+            background-color: #285a8c;
+            color:  white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); 
+            &:hover{
+    
+                background-color: white;
+                color:  #285a8c;
+            }
     }
 </style>

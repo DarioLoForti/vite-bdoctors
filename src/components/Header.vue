@@ -28,10 +28,6 @@ dropdowns.forEach(dropdown => {
                             <li><a class="dropdown-item" href=""><router-link class="text-white" :to="{ name: 'home' }">Home</router-link></a></li>
                             <li><hr></li>
                             <li><a class="dropdown-item" href=""><router-link class="text-white" :to="{ name: 'search' } ">Dottori</router-link></a></li>
-                            <li><hr></li>
-                            <li><a class="dropdown-item text-white" href="http://127.0.0.1:8000/login">Login</a></li>
-                            <li><hr></li>
-                            <li><a class="dropdown-item text-white" href="http://127.0.0.1:8000/register" > Registrati</a></li>
                         </ul>
                     </li>
                 </div>
@@ -42,12 +38,6 @@ dropdowns.forEach(dropdown => {
                     </li>
                     <li>
                         <router-link class="text-white" :to="{ name: 'search' } ">Dottori</router-link>
-                    </li>
-                    <li>
-                        <a class="text-white" href="http://127.0.0.1:8000/login" > Login</a>
-                    </li>
-                    <li>
-                        <a class="text-white" href="http://127.0.0.1:8000/register" > Registrati</a>
                     </li>
                 </ul>
             </div>
