@@ -10,32 +10,8 @@ export default {
     data(){
         return{
             store,
-            doctors: [],
-            specializations: []
         }
     },
-    created(){
-        this.getDoctors();
-        this.getSpecializations();
-    },
-    methods: {
-        getDoctors(){
-            axios.get(`${this.store.baseUrl}/api/doctors`,
-            {
-                params:{
-                    specialization: this.specialization,
-                    city: this.city
-                }
-            }).then((response)=>{
-                this.doctors = response.data.response;
-            })
-        },
-        getSpecializations(){
-            axios.get(`${this.store.baseUrl}/api/specializations`).then((response)=>{
-                store.specializations = response.data.response;
-            })
-        }
-    }
 }
 </script>
 <template lang="">
@@ -54,24 +30,6 @@ export default {
             </div>
         </div>
         <div class="container">
-            <div class="row my-5">
-                <div class="col-12">
-                    <h2>I dottori</h2>
-                </div>
-                <div class="col-4 my-3" v-for="doctor, index in this.doctors">
-                    <div class="card">
-                        <img class="my-img" :src="doctor.image" :alt="doctor.user.name">
-                        <div class="card-body">
-                            <h3>
-                                {{doctor.user.name}}
-                                {{doctor.user.surname}}
-                            </h3>
-                            <p>{{doctor.city}}</p>
-                            <!-- <p>Specializzazioni: {{specialization.name}}</p> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
             <hr class="my-5">
             <div class="row my-5">
                 <div class="col-3">

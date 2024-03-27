@@ -15,17 +15,16 @@ export default {
 <template lang="">
     <div class="col-3">
         <router-link :to="{name: 'doctor', params: {slug: doctor.slug}}">
-            <div>
-                Dr. {{doctor.user.name}} {{doctor.user.surname}}
-            </div>
-            <div>
-                pratica a {{doctor.city}}.
-            </div>
-            <div>
-                Specializzato in: 
-                <span v-for="specialization, index in doctor.specializations">
-                    {{specialization.name.toLowerCase()}}<span v-if="index == doctor.specializations.length-1">.</span>
-                </span>
+            <div class="card">
+                <img class="my-img" :src="doctor.image" :alt="doctor.user.name">
+                <div class="card-body">
+                    <h3>
+                        {{doctor.user.name}}
+                        {{doctor.user.surname}}
+                    </h3>
+                    <p>{{doctor.city}}</p>
+                    <!-- <p>Specializzazioni: {{specialization.name}}</p> -->
+                </div>
             </div>
         </router-link>
     </div>
