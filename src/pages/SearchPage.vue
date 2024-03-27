@@ -1,11 +1,12 @@
 <script>
+import DoctorCard from '../components/DoctorCard.vue';
 import { store } from '../store.js';
-import axios from'axios';
+import axios from 'axios';
 
 export default {
     name: 'SearchPage',
     components: {
-
+        DoctorCard,
     },
     data(){
         return{
@@ -66,9 +67,10 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div v-for="doctor, index in this.doctors">
-                    {{doctor.user.name}}
-                    {{doctor.user.surname}}
+                <div v-if="this.doctors.length != 0" class="container my-5">
+                    <div class="row g-5">
+                        <DoctorCard v-for="doctor, index in this.doctors" :key="index" :doctor="doctor"/>
+                    </div>
                 </div>
             </div>
         </div>
