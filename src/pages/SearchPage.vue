@@ -59,7 +59,7 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center my-4">
-                    <h1>BDoctors; Be Doctors!</h1>
+                    <h1>Cerca il tuo medico</h1>
                 </div>
                 <div class="container">
                     <div class="row align-items-center">
@@ -68,12 +68,12 @@ export default {
                                 <label for="name">Cerca il tuo dottore</label>
                                 <div class="input-group">
                                     <input class="form-control" name="surname" type="text" v-model="this.surname" @keyup.enter="getDoctor()" placeholder="Inserisci il cognome del dottore, completo o parziale (eg. 'Simone' o 'si')">
-                                    <button class="btn btn-sm btn-success" type="submit" @click="getDoctor()">Cerca!</button>
+                                    <button class="btn btn-sm btn-cerca" type="submit" @click="getDoctor()">Cerca!</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
-                            <label for="specialization">In cosa vuoi sia specializzato il dottore?</label>
+                        <div class="col-12 col-md-4 mb-3 mb-md-0 ">
+                            <label for="specialization" class="ms-1 mb-2">In cosa vuoi sia specializzato il dottore?</label>
                             <select class="form-select" name="specialization" id="specialization" v-model="this.specialization" @change="getDoctors()">
                                 <option value="" selected>Niente</option>
                                 <option v-for="specialization, key in store.specializations" :value="specialization['slug']">{{specialization['name']}}</option>
@@ -81,10 +81,10 @@ export default {
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="form-group">
-                                <label for="city">Da che città cerchi il tuo dottore?</label>
+                                <label for="city" class="ms-1 mb-2">Da che città cerchi il tuo dottore?</label>
                                 <div class="input-group">
                                     <input class="form-control" name="city" type="text" v-model="this.city" @keyup.enter="getDoctors()" placeholder="Inserisci il nome di una città, completo o parziale (eg. 'Roma' o 'Ro')">
-                                    <button class="btn btn-sm btn-success" type="submit" @click="getDoctors()">Cerca!</button>
+                                    <button class="btn btn-sm btn-cerca" type="submit" @click="getDoctors()">Cerca!</button>
                                 </div>
                             </div>
                         </div>
@@ -92,13 +92,19 @@ export default {
                 </div>
                 <div v-if="this.doctors.length != 0" class="container my-5">
                     <div class="row m-2">
-                        <DoctorCard v-for="doctor, index in this.doctors" :key="index" :doctor="doctor"/>
+                        <DoctorCard class="mb-3" v-for="doctor, index in this.doctors" :key="index" :doctor="doctor"/>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
-<style lang="">
+<style lang="scss" scoped>
+@use '../styles/generals.scss' as *;
+
+.btn-cerca{
+    background-color: #66cc99;
+    color: white;
+}
     
 </style>

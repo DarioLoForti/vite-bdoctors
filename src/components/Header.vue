@@ -16,36 +16,39 @@ dropdowns.forEach(dropdown => {
         <div class="row align-items-center">
             <div class="col-4">
                 <router-link :to="{ name: 'home' }">
-                    <img class='misura-logo' src="../../public/1.png" alt="">
+                    <img class='misura-logo ' src="../../public/logo.png" alt="">
                 </router-link>
             </div>
-                <div class="col-8 d-md-none" >
-                    <ul>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href=""><router-link :to="{ name: 'home' }">Home</router-link></a></li>
-                                <li><a class="dropdown-item" href=""><router-link :to="{ name: 'search' } ">Dottori</router-link></a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:8000/login">Login</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                <div class="col-8 d-md-none text-end" >
+                    <li class="dropdown list-unstyled ">
+                        <a href="#" class="hamburger-size" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-size bg-dropdown text-center" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href=""><router-link class="text-white" :to="{ name: 'home' }">Home</router-link></a></li>
+                            <li><hr></li>
+                            <li><a class="dropdown-item" href=""><router-link class="text-white" :to="{ name: 'search' } ">Dottori</router-link></a></li>
+                            <li><hr></li>
+                            <li><a class="dropdown-item text-white" href="http://127.0.0.1:8000/login">Login</a></li>
+                            <li><hr></li>
+                            <li><a class="dropdown-item text-white" href="http://127.0.0.1:8000/register" > Registrati</a></li>
+                        </ul>
+                    </li>
                 </div>
             <div class="col-8 d-none d-md-block" >
                 <ul class='float-end '>
                     <li>
-                        <router-link :to="{ name: 'home' }">Home</router-link>
+                        <router-link class="text-white" :to="{ name: 'home' }">Home</router-link>
                     </li>
                     <li>
-                        <router-link :to="{ name: 'search' } ">Dottori</router-link>
+                        <router-link class="text-white" :to="{ name: 'search' } ">Dottori</router-link>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1:8000/login" > Login</a>
+                        <a class="text-white" href="http://127.0.0.1:8000/login" > Login</a>
                     </li>
-                    
+                    <li>
+                        <a class="text-white" href="http://127.0.0.1:8000/register" > Registrati</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -84,5 +87,20 @@ header{
         width: 150px;
         
     }
+   
+    @media (max-width: 767px) {
+        .misura-logo {
+            width: 100px; 
+        }
+    }
+}
+.bg-dropdown{
+    background-color: #285a8c;
+}
+.hamburger-size{
+    font-size: 30px;
+}
+.dropdown-size{
+    width: 100vw;
 }
 </style>
