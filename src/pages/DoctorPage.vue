@@ -36,11 +36,34 @@ export default {
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-6">
-                    <img :src="doctor.image" :alt="doctor.user.name">
+                <div class="col-6 mb-4">
+                    <img class="" :src="doctor.image" :alt="doctor.user.name">
                 </div>
                 <div class="col-6">
-
+                    <div class="mb-3">
+                        <strong>Email:</strong> 
+                        {{ this.doctor.user.email }}     
+                    </div>
+                    <div class="mb-3">
+                        <strong>Numero di telefono:</strong> 
+                        {{ this.doctor.phone }}     
+                    </div>
+                    <div class="mb-3">
+                        <strong>Città:</strong> 
+                        {{ this.doctor.city }}     
+                    </div>
+                    <div class="mb-3">
+                        <strong>Indirizzo:</strong> 
+                        {{ this.doctor.user.address }}     
+                    </div>
+                    <div class="mb-3">
+                        <strong>Prestazioni:</strong> 
+                        {{ this.doctor.services }}     
+                    </div>
+                    <div class="mb-3">
+                        <strong>Curriculum: </strong> 
+                        <a :href="`${this.doctor.cv}`" target="_blank">Visualizza Curriculum</a>   
+                    </div>
                 </div>
             </div>
         </div>

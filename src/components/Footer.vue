@@ -8,7 +8,7 @@ export default {
 
         <div class="container ">
             <div class="row">
-                <div class="col-3">
+                <div class="col-lg-3 col-12 col-md-6 text-center text-md-start">
                     <h4 class="title-footer mb-3">Servizi</h4>
                     <ul class="list-unstyled text-list">
                         <li class="mb-2"><a href="#" class="text text-decoration-none">Privacy e cookies </a></li>
@@ -20,7 +20,7 @@ export default {
                         <li class="mb-2"><a href="#" class="text text-decoration-none">In che modo ordiniamo i risultati</a></li>	
                     </ul>
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-12 col-md-6 text-center text-md-start">
                     <h4 class="title-footer mb-3">Per i pazienti</h4>
                     <ul class="list-unstyled text-list">
                         <li class="mb-2"><a href="#" class="text text-decoration-none">Dottori</a></li>
@@ -33,7 +33,7 @@ export default {
                         
                     </ul>
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-12 col-md-6 text-center text-md-start">
                     <h4 class="title-footer mb-3">Per i professionisti sanitari</h4>
                     <ul class="list-unstyled text-list">
                         <li class="mb-2"><a href="#" class="text text-decoration-none">Prezzi </a></li>
@@ -44,10 +44,10 @@ export default {
                     </ul>
                 </div>
                 
-                <div class="col-3">
+                <div class="col-lg-3 col-12 col-md-6 text-center text-md-start">
                     <h4 class="title-footer mb-3">BDoctors
                     </h4>
-                    <img src="/4.jpeg" width="100px" alt="">
+                    <img src="/logo.png" width="100px" alt="">
                     <ul class="list-unstyled text-list">
                         <li class="mb-2"><a href="#" class="text text-decoration-none">Team 5 srl </a></li>
                         <li class="mb-2"><a href="#" class="text text-decoration-none">Via Roma, 1</a></li>
