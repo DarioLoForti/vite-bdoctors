@@ -20,17 +20,19 @@ dropdowns.forEach(dropdown => {
                 </router-link>
             </div>
                 <div class="col-8 d-md-none" >
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href=""><router-link :to="{ name: 'home' }">Home</router-link></a></li>
-                            <li><a class="dropdown-item" href=""><router-link :to="{ name: 'search' } ">Dottori</router-link></a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="http://127.0.0.1:8000/login">Login</a></li>
-                        </ul>
-                    </li>
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href=""><router-link :to="{ name: 'home' }">Home</router-link></a></li>
+                                <li><a class="dropdown-item" href=""><router-link :to="{ name: 'search' } ">Dottori</router-link></a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="http://127.0.0.1:8000/login">Login</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             <div class="col-8 d-none d-md-block" >
                 <ul class='float-end '>
@@ -64,6 +66,7 @@ header{
             line-height: 50px;
             margin-right: 10px;
             padding: 5px 4px;
+
             
 
             a{
