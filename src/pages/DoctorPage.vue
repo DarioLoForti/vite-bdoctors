@@ -30,19 +30,26 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center my-4">
-                    <h1>BDoctors; Be Doctors!</h1>
+                    <h1>Dr. {{ this.doctor.user.name }} {{ this.doctor.user.surname }}</h1>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    Dr. {{ this.doctor.user.name }} {{ this.doctor.user.surname }}
+                <div class="col-6">
+                    <img :src="doctor.image" :alt="doctor.user.name">
+                </div>
+                <div class="col-6">
+
                 </div>
             </div>
         </div>
     </div>
 </template>
-<style lang="">
-    
+<style lang="scss" scoped>
+@use '../styles/generals.scss' as *;
+
+img{
+    width: 300px
+}
 </style>

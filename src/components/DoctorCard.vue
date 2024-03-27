@@ -13,7 +13,7 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="col-3">
+    <div class="col-12 col-md-6 col-lg-3">
         <router-link :to="{name: 'doctor', params: {slug: doctor.slug}}">
             <div class="card">
                 <img class="my-img" :src="doctor.image" :alt="doctor.user.name">
