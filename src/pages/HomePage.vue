@@ -36,11 +36,8 @@ export default {
                     <p class=" text-light fs-5">Filtra le tue ricerche per città e/o specializzazioni. <br>
                         Leggi le recensioni, osserva i profili e scegli il meglio per te!
                     </p>
-                    <h2 class=" text-light text-center  mt-5">Sei un Medico?</h2>
-                    <div class="d-flex justify-content-around mt-5">
-                        <a class="btn btn-color-blu mt-4" href="http://127.0.0.1:8000/login">Login</a>
-                        <a class="btn btn-color-blu mt-4" href="http://127.0.0.1:8000/register" > Registrati</a>
-                    </div>
+                    
+                    
                 </div>
                 <img class='me-5' src="../../public/doctor-1.png" alt="">
             </div>
@@ -54,6 +51,30 @@ export default {
                 </div>   
         </div>
         <div class="container">
+            <div class="row my-5">
+                <div class="col-12 col-md-8">
+                    <div class="ms-5">
+                        <h2>Sei un Medico o un Centro medico?</h2>
+                        <p>Iscriviti e raggiungi nuovi pazienti</p>
+                        <p>Più di 2 milioni di pazienti cercano ogni mese il loro Medico su BDoctors,<br> il <strong>primo sito in Italia</strong> per visitatori e numero di prenotazioni.</p>
+                        <p>Con BDoctors:</p>
+                        <ul>
+                            <li>Ricevi prenotazioni da nuovi pazienti</li>
+                            <li>Migliori la tua visibilità e la tua reputazione online</li>
+                            <li>Organizzi al meglio il tuo lavoro con una suite completa di strumenti dedicati</li>
+                            <li>Puoi usare la nostra App multipiattaforma dedicata</li>
+                            <li>Hai il nostro staff sempre disponibile ad aiutarti</li>
+                        </ul>
+                        <div class="d-flex justify-content-start mt-3">
+                            <a class="btn btn-color-blu m-4" href="http://127.0.0.1:8000/login">Login</a>
+                            <a class="btn btn-color-blu m-4" href="http://127.0.0.1:8000/register" > Registrati</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <img class="me-5" src="../../public/doctor-4.png" alt="">
+                </div>
+            </div>
             <div class="row my-5">
                 <div class="col-12">
                     <div class="bg-grey p-3">
@@ -83,25 +104,42 @@ export default {
                     <span>Ricorderai sempre le tue visite future! Ti ricorderemo della tua visita tramite email e sms.</span>
                 </div>
             </div>
-            <div class="row my-5 bg-sponsor">
-                <div class="col-12 col-md-5">
-                    <img src="../../public/doctor-3.png" alt="" class="img-fluid">
+        </div>
+            <div class="containar-fluid">
+                <div class="row my-5 bg-sponsor">
+                    <div class="col-12 col-md-5">
+                        <img src="../../public/doctor-3.png" alt="" class="img-fluid">
+                    </div>
+                        <div class="col-12 col-md-7 mt-md-5 mt-3">
+                            <h2>Sei un professionista nel settore?</h2>
+                            <h3>Crea il tuo profilo e raggiungi i pazienti nella tua città.</h3>
+                            <ul>
+                                <li>Ricevi messaggi diretti dai tuoi pazienti</li>
+                                <li>Prenotazione visite h24 7/7</li>
+                                <li>Crescita professionale con sistema di recensioni</li>
+                            </ul>
+                            <div class="text-center pb-5">
+                                <button class="btn btn-sm btn-color mt-3 fs-5">Scopri i profili business</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-md-7 mt-md-5 mt-3">
-                    <h2>Sei un professionista nel settore?</h2>
-                    <h3>Crea il tuo profilo e raggiungi i pazienti nella tua città.</h3>
-                    <ul>
-                        <li>Ricevi messaggi diretti dai tuoi pazienti</li>
-                        <li>Prenotazione visite h24 7/7</li>
-                        <li>Crescita professionale con sistema di recensioni</li>
-                    </ul>
-                    <div class="text-center pb-5">
-                        <button class="btn btn-sm btn-color mt-3 fs-5">Scopri i profili business</button>
-
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-12 col-md-8">
+                        <div class="ms-5">
+                            <h2>Dicono di noi</h2>
+                            <p>Oltre il 99% di pazienti soddisfatti</p>
+                            <p>BDoctors è il primo sito in Italia di prenotazioni di visite mediche ed esami diagnostici</p>
+                            <p>Crediamo nell'importanza dell'informazione e della trasparenza per aiutare i pazienti a scegliere il medico giusto.</p>
+                            <p>Per questo su BDoctors, solo i pazienti che hanno prenotato attraverso il sito e svolto la prestazione possono rilasciare un feedback sul medico: una garanzia sull'affidabilità..</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 ">
+                        <img src="../../public/gruppo.png" alt="" class="img-fluid me-5">
                     </div>
                 </div>
             </div>
-        </div>
     </main>
 </template>
 <style lang="scss" scoped>
