@@ -10,8 +10,20 @@ export default {
     data(){
         return{
             store,
+            specializations: []
         }
     },
+    created(){
+        this.getSpecializations();
+    },
+    methods: {
+        getSpecializations(){
+            axios.get(`${this.store.baseUrl}/api/specializations`).then((response)=>{
+                this.specializations = response.data.response;
+                console.log(this.specializations);
+            })
+        }
+    }
 }
 </script>
 <template lang="">
@@ -30,23 +42,48 @@ export default {
             </div>
         </div>
         <div class="container">
+            <div class="row my-5">
+                <div class="col-12">
+                    <div class="bg-grey p-3">
+                        <h3>Le specializzazioni più richieste:</h3>
+                        <ul class="list-unstyled d-flex flex-wrap">
+                            <li v-for="specialization, index in specializations" class="me-2"> {{specialization.name}} </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <hr class="my-5">
             <div class="row my-5">
-                <div class="col-3">
+                <div class="col-12 col-md-6 col-lg-3">
                     <h3>Cerca i dottori per città</h3>
                     <span>Scegli tra oltre 200 000 medici di medicina generale e specialisti. Leggi le recensioni di altri pazienti.</span>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-md-6 col-lg-3">
                     <h3>Prenota le tue visite direttamente dal portale</h3>
                     <span>Scegli la data che preferisci, inserisci i tuoi dati e conferma… la visita è prenotata! Non comporta costi aggiuntivi.</span>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-md-6 col-lg-3">
                     <h3>Prescrizioni mediche</h3>
                     <span>Richiedi prescrizioni e condividi i risultati di test ed analisi con il tuo medico di medicina generale.</span>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-md-6 col-lg-3">
                     <h3>Ricorda i tuoi appuntamenti tramite SMS</h3>
                     <span>Ricorderai sempre le tue visite future! Ti ricorderemo della tua visita tramite email e sms.</span>
+                </div>
+            </div>
+            <div class="row my-5 bg-sponsor">
+                <div class="col-12 col-md-5">
+                    <img src="../../public/doctor-3.png" alt="" class="img-fluid">
+                </div>
+                <div class="col-12 col-md-7 mt-5">
+                    <h2>Sei un professionista nel settore?</h2>
+                    <h3>Crea il tuo profilo e raggiungi i pazienti nella tua città.</h3>
+                    <ul>
+                        <li>Ricevi messaggi diretti dai tuoi pazienti</li>
+                        <li>Prenotazione visite h24 7/7</li>
+                        <li>Crescita professionale con sistema di recensioni</li>
+                    </ul>
+                    <button class="btn btn-sm btn-primary mt-3 fs-5">Scopri i profili business</button>
                 </div>
             </div>
         </div>
@@ -67,8 +104,12 @@ export default {
         color: #285a8c;
     }
 
-    .my-img{
-        width: 100%;
-        max-height: 250px
+    .bg-sponsor{
+        background-color: rgba(102, 204, 153, 0.5);
     }
+
+    .bg-grey{
+        background-color: #f7f9fa;
+    }
+    
 </style>
