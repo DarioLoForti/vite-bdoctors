@@ -80,15 +80,15 @@ export default {
                 <div class="col-12">
                     <div class="bg-grey p-3">
                         <h3>Le specializzazioni più richieste:</h3>
-                        <ul class="list-unstyled d-flex flex-wrap">
-                            <li v-for="specialization, index in store.specializations" class="me-2"> 
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-6" v-for="(specialization, index) in store.specializations" :key="index">
                                 <span class="my-text">
                                     <router-link class="text-decoration-none" :to="{name: 'search'}" @click="store.specrequest = specialization.slug; console.log(store.specrequest);">
-                                        {{specialization.name}}
+                                        {{ specialization.name }}
                                     </router-link>
                                 </span>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
