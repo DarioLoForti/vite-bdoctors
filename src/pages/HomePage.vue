@@ -30,14 +30,14 @@ export default {
     <main>
         <div class="jumbotron d-none d-md-block">
             <div class="my-container d-flex justify-content-between">
-                <img class='image' src="../../public/doctor-5.png" alt="" >
+                <img class='image' src="../../public/doctor-7.png" alt="" >
                     <div class="pt-5">
                         <h1 class="fs-1 my-text">Il tuo dottore a portata di un Click!</h1>
                         <p class=" text-light fs-5">Filtra le tue ricerche per città e/o specializzazioni. <br>
                             Leggi le recensioni, osserva i profili e scegli il meglio per te!
                         </p>
                     </div>
-                <img class='image' src="../../public/doctor-6.png" alt="" style="height: 50%">
+                <img class='image' width: src="../../public/doctor-6.png" alt="" style="height: 50%">
             </div>
         </div>
 
@@ -275,6 +275,7 @@ export default {
         }
         .image{
             width: 25%;
+            
         }
     }
 
