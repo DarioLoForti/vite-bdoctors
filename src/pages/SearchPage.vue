@@ -96,7 +96,7 @@ export default {
                 </div>
                 <div v-if="this.doctors.length != 0 && this.success" class="container my-5">
                     <div class="row g-2">
-                        <DoctorCard v-for="doctor, index in this.doctors" :key="index" :doctor="doctor"/>
+                        <DoctorCard v-for="doctor, index in this.doctors" :key="index" :doctor="doctor" :specialization="specialization" />
                     </div>
                 </div>
                 <div v-else class="my-5">

@@ -4,6 +4,7 @@ export default {
     name: 'DoctorCard',
     props: {
         doctor: Object,
+        specialization: Object,
     },
     data() {
         return {
@@ -23,7 +24,7 @@ export default {
                         {{doctor.user.surname}}
                     </h3>
                     <p>{{doctor.city}}</p>
-                    <!-- <p>Specializzazioni: {{specialization.name}}</p> -->
+                    <p>{{specialization.name}}</p>
                 </div>
             </div>
         </router-link>
