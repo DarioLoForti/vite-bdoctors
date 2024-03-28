@@ -38,6 +38,27 @@ export default {
             <div class="row">
                 <div class="col-6 mb-4">
                     <img class="" :src="doctor.image" :alt="doctor.user.name">
+                    <div class="col-5 mt-3">
+
+                        <label class="form-label" for="rating">Inserisci la tua votazione</label>
+                        <form action="http://127.0.0.1:8000/ratings/create" method="GET">
+                            <div class="rating">
+                                <input type="radio" id="star1" name="rating" value="1" />
+                                <label for="star1" title="1 stella">&#9733;</label>
+                                <input type="radio" id="star2" name="rating" value="2" />
+                                <label for="star2" title="2 stelle">&#9733;</label>
+                                <input type="radio" id="star3" name="rating" value="3" />
+                                <label for="star3" title="3 stelle">&#9733;</label>
+                                <input type="radio" id="star4" name="rating" value="4" />
+                                <label for="star4" title="4 stelle">&#9733;</label>
+                                <input type="radio" id="star5" name="rating" value="5" />
+                                <label for="star5" title="5 stelle">&#9733;</label>
+                            </div>
+                            <div>
+                                <button class="btn btn-sm btn-success" type="submit">invia</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
@@ -90,5 +111,33 @@ export default {
 
 img{
     width: 300px
+}
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    position: relative;
+}
+.rating > input {
+    display: none;
+}
+.rating > label {
+    display: inline-block;
+    padding: 5px;
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+}
+.rating > label:hover,
+.rating > label:hover ~ label,
+.rating > input:checked ~ label {
+    color: #f39c12;
+}
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > label:hover ~ input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label:hover ~ label {
+    color: #f1c40f;
 }
 </style>
