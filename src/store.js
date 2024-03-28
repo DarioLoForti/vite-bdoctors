@@ -19,5 +19,6 @@ export const store = reactive({
         },
     ],
 
-    specializations: [], 
+    specializations: [],
+    specrequest: '',
 });

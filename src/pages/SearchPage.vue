@@ -12,7 +12,7 @@ export default {
         return{
             store,
             doctors: [],
-            specialization: '',
+            specialization: store.specrequest,
             namestring: '',
             city: '',
             success: null,
@@ -34,16 +34,8 @@ export default {
             }).then((response)=>{
                 if(response.data.success){
                     this.success = true;
-
-                    if(Array.isArray(response.data.response)){
-                        this.doctors = response.data.response;
-                        /* console.log(this.doctors); */
-                    }
-                    else{
-                        this.doctors = [];
-                        this.doctors.push(response.data.response);
-                        /* console.log(this.doctors); */
-                    }
+                    this.doctors = [];
+                    this.doctors = response.data.response;
                 }
                 else{
                     this.success = false;
@@ -51,9 +43,11 @@ export default {
             })
         },
         getSpecializations(){
-            axios.get(`${this.store.baseUrl}/api/specializations`).then((response)=>{
-                store.specializations = response.data.response;
-            })
+            if(store.specializations = []){
+                axios.get(`${this.store.baseUrl}/api/specializations`).then((response)=>{
+                    store.specializations = response.data.response;
+                })
+            }
         }
     }
 }
@@ -78,7 +72,7 @@ export default {
                             <div class="form-group">
                                 <label for="city" class="ms-1 mb-2">In che città cerchi il tuo dottore?</label>
                                 <div class="input-group">
-                                    <input class="form-control" name="city" type="text" v-model="this.city" @keyup="getDoctors()" placeholder="Inserisci il nome di una città, completo o parziale (eg. 'Roma' o 'Ro')">
+                                    <input class="form-control" name="city" type="text" v-model="this.city" @keyup.enter="getDoctors()" placeholder="Inserisci il nome di una città, completo o parziale (eg. 'Roma' o 'Ro')">
                                     <button class="btn btn-sm btn-cerca" type="submit" @click="getDoctors()">Cerca!</button>
                                 </div>
                             </div>
@@ -87,7 +81,7 @@ export default {
                             <div class="form-group">
                                 <label for="name" class="ms-1 mb-2">Conosci già il tuo dottore?</label>
                                 <div class="input-group">
-                                    <input class="form-control" name="namestring" type="text" v-model="this.namestring" @keyup="getDoctors()" placeholder="Inserisci il cognome del dottore, completo o parziale (eg. 'Simone' o 'si')">
+                                    <input class="form-control" name="namestring" type="text" v-model="this.namestring" @keyup.enter="getDoctors()" placeholder="Inserisci il cognome del dottore, completo o parziale (eg. 'Simone' o 'Si')">
                                     <button class="btn btn-sm btn-cerca" type="submit" @click="getDoctors()">Cerca!</button>
                                 </div>
                             </div>
