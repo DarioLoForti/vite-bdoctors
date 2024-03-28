@@ -62,7 +62,23 @@ export default {
                     </div>
                     <div class="mb-3">
                         <strong>Curriculum: </strong> 
-                        <a href="#" target="_blank">Visualizza Curriculum</a>   
+                        <a :href="`${this.doctor.cv}`" target="_blank">Visualizza Curriculum</a>
+                    </div>
+                    <div class="container my-5">
+                        <div class="row">
+                            <div class="col-6">
+                                <form action="http://127.0.0.1:8000/messages/create" method="GET">
+                                    <input type="hidden" name="slug" :value="this.doctor.slug">
+                                    <button class="btn btn-sm btn-success" type="submit"><i class="fa-solid fa-message" style="color: #ffffff;"></i></button>
+                                </form>
+                            </div>
+                            <div class="col-6">
+                                <form action="http://127.0.0.1:8000/reviews/create" method="GET">
+                                    <input type="hidden" name="slug" :value="this.doctor.slug">
+                                    <button class="btn btn-sm btn-success" type="submit"><i class="fa-solid fa-book-open" style="color: #ffffff;"></i></button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
