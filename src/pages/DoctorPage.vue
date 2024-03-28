@@ -62,7 +62,7 @@ export default {
                     </div>
                     <div class="mb-3">
                         <strong>Curriculum: </strong> 
-                        <a :href="`${this.doctor.cv}`" target="_blank">Visualizza Curriculum</a>
+                        <a href="#" target="_blank">Visualizza Curriculum</a>  
                     </div>
                     <div class="container my-5">
                         <div class="row">
