@@ -1,4 +1,5 @@
 <script>
+
 export default {
     mounted() {
 
@@ -27,17 +28,17 @@ dropdowns.forEach(dropdown => {
                         <ul class="dropdown-menu dropdown-size bg-dropdown text-center" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href=""><router-link class="text-white" :to="{ name: 'home' }">Home</router-link></a></li>
                             <li><hr></li>
-                            <li><a class="dropdown-item" href=""><router-link class="text-white" :to="{ name: 'search' } ">Dottori</router-link></a></li>
+                            <li><a class="dropdown-item" href=""><router-link class="text-white" :to="{ name: 'search' } ">I nostri Dottori</router-link></a></li>
                         </ul>
                     </li>
                 </div>
             <div class="col-8 d-none d-md-block" >
                 <ul class='float-end '>
                     <li>
-                        <router-link class="text-white" :to="{ name: 'home' }">Home</router-link>
+                        <router-link class="text-white me-3" :to="{ name: 'home' }">Home</router-link>
                     </li>
                     <li>
-                        <router-link class="text-white" :to="{ name: 'search' } ">Dottori</router-link>
+                        <router-link class="text-white" :to="{ name: 'search' }">I nostri Dottori</router-link>
                     </li>
                 </ul>
             </div>
