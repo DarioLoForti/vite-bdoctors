@@ -30,14 +30,14 @@ export default {
     <main>
         <div class="jumbotron d-none d-md-block">
             <div class="my-container d-flex justify-content-between">
-                <img class='image' src="../../public/doctor-5.png" alt="" >
+                <img class='image' src="../../public/doctor-7.png" alt="" >
                     <div class="pt-5">
                         <h1 class="fs-1 my-text">Il tuo dottore a portata di un Click!</h1>
                         <p class=" text-light fs-5">Filtra le tue ricerche per città e/o specializzazioni. <br>
                             Leggi le recensioni, osserva i profili e scegli il meglio per te!
                         </p>
                     </div>
-                <img class='image' src="../../public/doctor-6.png" alt="" style="height: 50%">
+                <img class='image' width: src="../../public/doctor-6.png" alt="" style="height: 50%">
             </div>
         </div>
 
@@ -80,15 +80,15 @@ export default {
                 <div class="col-12">
                     <div class="bg-grey p-3">
                         <h3>Le specializzazioni più richieste:</h3>
-                        <ul class="list-unstyled d-flex flex-wrap">
-                            <li v-for="specialization, index in store.specializations" class="me-2"> 
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-6" v-for="(specialization, index) in store.specializations" :key="index">
                                 <span class="my-text">
                                     <router-link class="text-decoration-none" :to="{name: 'search'}" @click="store.specrequest = specialization.slug; console.log(store.specrequest);">
-                                        {{specialization.name}}
+                                        {{ specialization.name }}
                                     </router-link>
                                 </span>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -275,6 +275,7 @@ export default {
         }
         .image{
             width: 25%;
+            
         }
     }
 
