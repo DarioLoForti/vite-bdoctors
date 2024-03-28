@@ -10,7 +10,6 @@ export default {
     data(){
         return{
             store,
-            specializations: []
         }
     },
     created(){
@@ -18,9 +17,11 @@ export default {
     },
     methods: {
         getSpecializations(){
-            axios.get(`${this.store.baseUrl}/api/specializations`).then((response)=>{
-                this.specializations = response.data.response;
-            })
+            if(store.specializations = []){
+                axios.get(`${this.store.baseUrl}/api/specializations`).then((response)=>{
+                    store.specializations = response.data.response;
+                })
+            }
         }
     }
 }
@@ -59,7 +60,13 @@ export default {
                     <div class="bg-grey p-3">
                         <h3>Le specializzazioni più richieste:</h3>
                         <ul class="list-unstyled d-flex flex-wrap">
-                            <li v-for="specialization, index in specializations" class="me-2"> {{specialization.name}} </li>
+                            <li v-for="specialization, index in store.specializations" class="me-2"> 
+                                <span class="my-text">
+                                    <router-link class="text-decoration-none" :to="{name: 'search'}" @click="store.specrequest = specialization.slug; console.log(store.specrequest);">
+                                        {{specialization.name}}
+                                    </router-link>
+                                </span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -96,7 +103,7 @@ export default {
                         <li>Crescita professionale con sistema di recensioni</li>
                     </ul>
                     <div class="text-center pb-5">
-                        <button class="btn btn-sm btn-color mt-3 fs-5">Scopri i profili business</button>
+                        <button class="btn btn-sm btn-color mt-3 fs-5">Scopri i profili business!</button>
 
                     </div>
                 </div>
@@ -128,6 +135,7 @@ export default {
     .bg-grey{
         background-color: #f7f9fa;
     }
+
     .btn-color{
         
         background-color: #66cc99;
@@ -139,15 +147,16 @@ export default {
             color:  #66cc99;
         }
     }
-        .btn-color-blu{
-        
-            background-color: #285a8c;
-            color:  white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); 
-            &:hover{
+
+    .btn-color-blu{
     
-                background-color: white;
-                color:  #285a8c;
-            }
+        background-color: #285a8c;
+        color:  white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); 
+        &:hover{
+
+            background-color: white;
+            color:  #285a8c;
+        }
     }
 </style>

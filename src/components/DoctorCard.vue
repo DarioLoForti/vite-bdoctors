@@ -40,6 +40,7 @@ export default {
     border-top-right-radius:16px;
     border-top-left-radius:16px;
 }
+
 .color-card{
     background-color: #285a8c;
     border-radius: 20px;
@@ -49,7 +50,6 @@ export default {
     &:hover{
         border: 4px solid #66cc99;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-        
     } 
 }
 </style>
