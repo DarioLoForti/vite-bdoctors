@@ -70,13 +70,13 @@ export default {
                         <div class="col-12 col-md-4">
                             <label class="ms-1 mb-2" for="specialization">In cosa vuoi sia specializzato il dottore?</label>
                             <select class="form-select" name="specialization" id="specialization" v-model="this.specialization" @change="getDoctors()">
-                                <option value="" selected>Niente</option>
+                                <option value="" selected>Scegli la Specializzazione</option>
                                 <option v-for="specialization, key in store.specializations" :value="specialization['slug']">{{specialization['name']}}</option>
                             </select>
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="form-group">
-                                <label for="city" class="ms-1 mb-2">Da che città cerchi il tuo dottore?</label>
+                                <label for="city" class="ms-1 mb-2">In che città cerchi il tuo dottore?</label>
                                 <div class="input-group">
                                     <input class="form-control" name="city" type="text" v-model="this.city" @keyup="getDoctors()" placeholder="Inserisci il nome di una città, completo o parziale (eg. 'Roma' o 'Ro')">
                                     <button class="btn btn-sm btn-cerca" type="submit" @click="getDoctors()">Cerca!</button>

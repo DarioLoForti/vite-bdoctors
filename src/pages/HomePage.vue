@@ -29,27 +29,26 @@ export default {
     <main>
         <div class="jumbotron d-none d-md-block">
             <div class="my-container d-flex justify-content-between">
-
                 <img class='ms-5' src="../../public/doctor-2.png" alt="">
-                <div>
-                    <h1 class="fs-1 my-text">Il tuo dottore a portata di un Click!</h1>
-                    <p class=" text-light fs-5">Filtra le tue ricerche per città e/o specializzazioni. <br>
-                        Leggi le recensioni, osserva i profili e scegli il meglio per te!
-                    </p>
-                    
-                    
-                </div>
+                    <div>
+                        <h1 class="fs-1 my-text">Il tuo dottore a portata di un Click!</h1>
+                        <p class=" text-light fs-5">Filtra le tue ricerche per città e/o specializzazioni. <br>
+                            Leggi le recensioni, osserva i profili e scegli il meglio per te!
+                        </p>
+                    </div>
                 <img class='me-5' src="../../public/doctor-1.png" alt="">
             </div>
         </div>
+
         <div class="jumbotron d-md-none">
             <div class="container d-flex text-center flex-column py-5">
-                    <h1 class="fs-1 my-text">Il tuo dottore a portata di un Click!</h1>
-                    <p class=" text-light fs-5">Filtra le tue ricerche per città e/o specializzazioni. <br>
-                        Leggi le recensioni, osserva i profili e scegli il meglio per te!
-                    </p>
-                </div>   
+                <h1 class="fs-1 my-text">Il tuo dottore a portata di un Click!</h1>
+                <p class=" text-light fs-5">Filtra le tue ricerche per città e/o specializzazioni. <br>
+                    Leggi le recensioni, osserva i profili e scegli il meglio per te!
+                </p>
+            </div>   
         </div>
+
         <div class="container">
             <div class="row my-5">
                 <div class="col-12 col-md-8">
@@ -65,16 +64,17 @@ export default {
                             <li>Puoi usare la nostra App multipiattaforma dedicata</li>
                             <li>Hai il nostro staff sempre disponibile ad aiutarti</li>
                         </ul>
-                        <div class="d-flex justify-content-start mt-3">
-                            <a class="btn btn-color-blu m-4" href="http://127.0.0.1:8000/login">Login</a>
-                            <a class="btn btn-color-blu m-4" href="http://127.0.0.1:8000/register" > Registrati</a>
-                        </div>
+                            <div class="d-flex justify-content-start mt-3">
+                                <a class="btn btn-color-blu m-4" href="http://127.0.0.1:8000/login">Login</a>
+                                <a class="btn btn-color-blu m-4" href="http://127.0.0.1:8000/register" > Registrati</a>
+                            </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <img class="me-5" src="../../public/doctor-4.png" alt="">
                 </div>
             </div>
+
             <div class="row my-5">
                 <div class="col-12">
                     <div class="bg-grey p-3">
@@ -85,7 +85,6 @@ export default {
                     </div>
                 </div>
             </div>
-            <hr class="my-5">
             <div class="row my-5">
                 <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-3">
                     <h3>Cerca i dottori per città</h3>
@@ -105,102 +104,155 @@ export default {
                 </div>
             </div>
         </div>
-            <div class="containar-fluid">
-                <div class="row my-5 bg-sponsor">
-                    <div class="col-12 col-md-5">
-                        <img src="../../public/doctor-3.png" alt="" class="img-fluid">
-                    </div>
-                        <div class="col-12 col-md-7 mt-md-5 mt-3">
-                            <h2>Sei un professionista nel settore?</h2>
-                            <h3>Crea il tuo profilo e raggiungi i pazienti nella tua città.</h3>
-                            <ul>
-                                <li>Ricevi messaggi diretti dai tuoi pazienti</li>
-                                <li>Prenotazione visite h24 7/7</li>
-                                <li>Crescita professionale con sistema di recensioni</li>
-                            </ul>
-                            <div class="text-center pb-5">
-                                <button class="btn btn-sm btn-color mt-3 fs-5">Scopri i profili business</button>
-                            </div>
-                        </div>
-                    </div>
+        <div class="containar-fluid">
+            <div class="row my-5 bg-sponsor">
+                <div class="col-12 col-md-5">
+                    <img src="../../public/doctor-3.png" alt="" class="img-fluid">
                 </div>
-            <div class="container">
-                <div class="row my-5">
-                    <div class="col-12 col-md-8">
-                        <div class="ms-5">
-                            <h2>Dicono di noi</h2>
-                            <p>Oltre il 99% di pazienti soddisfatti</p>
-                            <p>BDoctors è il primo sito in Italia di prenotazioni di visite mediche ed esami diagnostici</p>
-                            <p>Crediamo nell'importanza dell'informazione e della trasparenza per aiutare i pazienti a scegliere il medico giusto.</p>
-                            <p>Per questo su BDoctors, solo i pazienti che hanno prenotato attraverso il sito e svolto la prestazione possono rilasciare un feedback sul medico: una garanzia sull'affidabilità..</p>
+                <div class="col-12 col-md-7 mt-md-5 mt-3">
+                    <h2>Sei un professionista nel settore?</h2>
+                    <h3>Crea il tuo profilo e raggiungi i pazienti nella tua città.</h3>
+                    <ul>
+                        <li>Ricevi messaggi diretti dai tuoi pazienti</li>
+                        <li>Prenotazione visite h24 7/7</li>
+                        <li>Crescita professionale con sistema di recensioni</li>
+                    </ul>
+                        <div class="text-center pb-5">
+                            <button class="btn btn-sm btn-color mt-3 fs-5">Scopri i profili business</button>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-4 ">
-                        <img src="../../public/gruppo.png" alt="" class="img-fluid me-5">
-                    </div>
-                </div>
-                <div class="row my-5">
-                    <div id="carouselExampleDark" class="carousel carousel-dark slide">
-                        <div class="carousel-indicators">
-                          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                          <div class="carousel-item active d-flex justify-content-center" >
-                            <div class="card my-5" style="width: 18rem;">
-                                <div class="card-body">
-                                  <h5 class="card-title">1</h5>
-                                  <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <a href="#" class="card-link">Card link</a>
-                                  <a href="#" class="card-link">Another link</a>
-                                </div>
-                              </div>
-                            <div class="carousel-caption d-none d-md-block">
-
-                            </div>
-                          </div>
-                          <div class="carousel-item d-flex justify-content-center">
-                            <div class="card my-5" style="width: 18rem;">
-                                <div class="card-body">
-                                  <h5 class="card-title">2</h5>
-                                  <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <a href="#" class="card-link">Card link</a>
-                                  <a href="#" class="card-link">Another link</a>
-                                </div>
-                              </div>
-                            <div class="carousel-caption d-none d-md-block">
-                              
-                            </div>
-                          </div>
-                          <div class="carousel-item d-flex justify-content-center">
-                            <div class="card my-5" style="width: 18rem;">
-                                <div class="card-body">
-                                  <h5 class="card-title">3</h5>
-                                  <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <a href="#" class="card-link">Card link</a>
-                                  <a href="#" class="card-link">Another link</a>
-                                </div>
-                              </div>
-                            <div class="carousel-caption d-none d-md-block">
-                              
-                            </div>
-                          </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                      </div>
                 </div>
             </div>
+        </div>
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-12 col-md-8">
+                    <div class="ms-5">
+                        <h2>Dicono di noi</h2>
+                        <p>Oltre il 99% di pazienti soddisfatti</p>
+                        <p>BDoctors è il primo sito in Italia di prenotazioni di visite mediche ed esami diagnostici</p>
+                        <p>Crediamo nell'importanza dell'informazione e della trasparenza per aiutare i pazienti a scegliere il medico giusto.</p>
+                        <p>Per questo su BDoctors, solo i pazienti che hanno prenotato attraverso il sito e svolto la prestazione possono rilasciare un feedback sul medico: una garanzia sull'affidabilità..</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 ">
+                    <img src="../../public/gruppo.png" alt="" class="img-fluid me-5">
+                </div>
+            </div>
+        </div>
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="card" style="width: 700px;" >
+                                        <div class="card-body">
+                                            <h5 class="card-title">Navigazione semplice e veloce</h5>
+                                            <p class="card-text">Ho trovato il sito estremamente facile da usare per trovare un dottore specialista adatto alle mie esigenze. La barra di ricerca intuitiva e la possibilità di filtrare i risultati in base alla specializzazione, alla posizione e alle recensioni dei pazienti hanno reso il processo di selezione rapido e senza stress. Grazie alla struttura chiara e organizzata del sito, ho potuto prenotare una visita con il dottore giusto in pochi minuti. Consiglio vivamente questo sito a chiunque cerchi un modo semplice e conveniente per gestire la propria salute</p>
+                                            <p class="card-text"><small class="text-muted">- Nome dell'Autore</small></p>
+                                            <div class="d-flex">
+                                              <span class="me-2">Voto:</span>
+                                                <div class="rating">
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="card" style="width: 700px;" >
+                                        <div class="card-body">
+                                            <h5 class="card-title">Esperienza utente impeccabile</h5>
+                                            <p class="card-text">La mia esperienza con questo sito è stata estremamente positiva grazie alla sua interfaccia utente intuitiva e ben progettata. La possibilità di cercare dottori per specializzazione e posizione ha reso la ricerca molto efficiente, mentre le schede dettagliate dei dottori con informazioni chiare e recensioni dei pazienti mi hanno aiutato a prendere una decisione informata. Inoltre, il processo di prenotazione online è stato rapido e senza intoppi. Grazie a questo sito, ho trovato il dottore perfetto per le mie esigenze in pochi clic.</p>
+                                            <p class="card-text"><small class="text-muted">- Nome dell'Autore</small></p>
+                                            <div class="d-flex">
+                                              <span class="me-2">Voto:</span>
+                                                <div class="rating">
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="card" style="width: 700px;" >
+                                        <div class="card-body">
+                                            <h5 class="card-title">Navigazione intuitiva e personalizzata</h5>
+                                            <p class="card-text">Sono rimasto impressionato dalla facilità con cui ho potuto trovare un dottore specialista tramite questo sito. La sua interfaccia utente intuitiva mi ha permesso di cercare e filtrare i risultati in base alle mie esigenze specifiche, garantendomi di trovare rapidamente il dottore più adatto a me. Inoltre, ho apprezzato la funzionalità di salvataggio dei preferiti, che mi ha permesso di tenere traccia dei dottori che mi interessavano di più per confrontarli in seguito. Grazie alla sua navigazione fluida e personalizzata, questo sito si è dimostrato un prezioso strumento nella gestione della mia salute.</p>
+                                            <p class="card-text"><small class="text-muted">- Nome dell'Autore</small></p>
+                                            <div class="d-flex">
+                                              <span class="me-2">Voto:</span>
+                                                <div class="rating">
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="card" style="width: 700px;" >
+                                        <div class="card-body">
+                                            <h5 class="card-title">Interfaccia user-friendly e informativa</h5>
+                                            <p class="card-text">Sono rimasto estremamente soddisfatto dell'esperienza di utilizzo di questo sito. La sua interfaccia user-friendly mi ha permesso di navigare facilmente attraverso le varie opzioni di ricerca per trovare il dottore specialista di cui avevo bisogno. Le schede dettagliate dei dottori, complete di informazioni sulla loro formazione, esperienza e recensioni dei pazienti, mi hanno aiutato a prendere una decisione informata. Inoltre, apprezzo la sezione delle domande frequenti e le risorse informative che il sito offre, che mi hanno fornito ulteriori dettagli sui diversi trattamenti e procedure disponibili. Consiglio vivamente questo sito a chiunque cerchi una piattaforma intuitiva e informativa per la ricerca di un dottore specialista.</p>
+                                            <p class="card-text"><small class="text-muted">- Nome dell'Autore</small></p>
+                                            <div class="d-flex">
+                                              <span class="me-2">Voto:</span>
+                                                <div class="rating">
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="card" style="width: 700px;" >
+                                        <div class="card-body">
+                                            <h5 class="card-title">Ricerca rapida e accurata, prenotazione senza sforzo</h5>
+                                            <p class="card-text">Ho trovato il processo di ricerca e prenotazione di un dottore tramite questo sito incredibilmente semplice e diretto. La funzionalità di ricerca rapida mi ha permesso di trovare facilmente dottori in base alla loro specializzazione e posizione, mentre i filtri aggiuntivi per valutazioni dei pazienti e disponibilità degli appuntamenti hanno affinato ulteriormente i risultati. Una volta scelto il dottore desiderato, la procedura di prenotazione è stata altrettanto semplice e senza sforzo. In breve, questo sito ha reso il processo di trovare e prenotare un dottore un'esperienza piacevole e priva di stress. Lo consiglio vivamente a chiunque cerchi una soluzione conveniente e efficiente per le proprie esigenze mediche.</p>
+                                            <p class="card-text"><small class="text-muted">- Nome dell'Autore</small></p>
+                                            <div class="d-flex justify-content-center">
+                                              <span class="me-2">Voto:</span>
+                                                <div class="rating">
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>v
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden ">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
     </main>
 </template>
 <style lang="scss" scoped>
@@ -249,4 +301,12 @@ export default {
                 color:  #285a8c;
             }
     }
+
+.carousel-control-prev,
+.carousel-control-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 </style>
