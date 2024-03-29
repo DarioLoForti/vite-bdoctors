@@ -23,7 +23,9 @@ export default {
                         {{doctor.user.surname}}
                     </h3>
                     <p>{{doctor.city}}</p>
-                    <!-- <p>Specializzazioni: {{specialization.name}}</p> -->
+                    <p>
+                        <span>{{parseFloat(doctor.ratings_avg_rating).toFixed(1)}}</span>
+                    </p>
                 </div>
             </div>
         </router-link>

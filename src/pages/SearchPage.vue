@@ -15,6 +15,8 @@ export default {
             specialization: store.specrequest,
             namestring: '',
             city: '',
+            reviewOrder: "DESC",
+            ratingOrder: "DESC", 
             success: null,
         }
     },
@@ -29,7 +31,9 @@ export default {
                 params:{
                     specialization: this.specialization,
                     namestring: this.namestring.split(" ").join(""),
-                    city: this.city
+                    city: this.city,
+                    reviewOrder: this.reviewOrder,
+                    ratingOrder: this.ratingOrder,
                 }
             }).then((response)=>{
                 if(response.data.success){
@@ -48,7 +52,7 @@ export default {
                     store.specializations = response.data.response;
                 })
             }
-        }
+        },
     }
 }
 </script>
@@ -59,8 +63,36 @@ export default {
                 <div class="col-12 text-center my-4">
                     <h1>Cerca il tuo medico</h1>
                 </div>
-                <div class="container">
+        <div class="row">
+            <div class="form-group mb-3">
+                <div class="dropdown mb-2">
+                    <a class="btn btn-primary dropdown-toggle " href="#search_filter" role="button"
+                        data-bs-toggle="collapse" aria-controls="search_filter" aria-expanded="true">
+                        Ricerca e Filtraggio
+                    </a>
+                </div>
+                <div id="search_filter" class="collapse multi-collapse m-1">
                     <div class="row align-items-center">
+                        <div class="col-12 my-3">
+                            <div class="btn" @click="this.reviewOrder == 'DESC' ? this.reviewOrder = 'ASC' : this.reviewOrder = 'DESC'; getDoctors()" :class="this.reviewOrder == 'DESC' ? 'btn-success' : 'btn-danger'">
+                                Recensioni:
+                                <span v-if="this.reviewOrder == 'DESC'">
+                                    <i class="fa-solid fa-arrow-down" style="color: #ffffff;"></i>
+                                </span>
+                                <span v-else>
+                                    <i class="fa-solid fa-arrow-up" style="color: #ffffff;"></i>
+                                </span>
+                            </div>
+                            <div class="btn mx-1" @click="this.ratingOrder == 'DESC' ? this.ratingOrder = 'ASC' : this.ratingOrder = 'DESC'; getDoctors()" :class="this.ratingOrder == 'DESC' ? 'btn-success' : 'btn-danger'">
+                                Media Voti:
+                                <span v-if="this.ratingOrder == 'DESC'">
+                                    <i class="fa-solid fa-arrow-down" style="color: #ffffff;"></i>
+                                </span>
+                                <span v-else>
+                                    <i class="fa-solid fa-arrow-up" style="color: #ffffff;"></i>
+                                </span>
+                            </div>
+                        </div>
                         <div class="col-12 col-md-4">
                             <label class="ms-1 mb-2" for="specialization">In cosa vuoi sia specializzato il dottore?</label>
                             <select class="form-select" name="specialization" id="specialization" v-model="this.specialization" @change="getDoctors()">
@@ -87,6 +119,8 @@ export default {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
                 </div>
                 <div v-if="this.doctors.length != 0 && this.success" class="container my-5">
                     <div class="row g-2">

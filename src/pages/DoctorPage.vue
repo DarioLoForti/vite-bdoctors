@@ -40,10 +40,10 @@ export default {
                     <img class="" :src="doctor.image" :alt="doctor.user.name">
                     <div class="col-5 mt-3">
 
-                        <label class="form-label" for="rating">Inserisci la tua votazione</label>
+                        <label class="form-label" for="rating">Vuoi dare un voto a Dr. {{this.doctor.user.surname}}?</label>
                         <form action="http://127.0.0.1:8000/ratings/create" method="GET">
                             <div class="rating">
-                                <input type="hidden" name="slug" :value="this.doctor.slug">
+                                <input type="hidden" name="doctor_id" :value="this.doctor.id">
                                 <input type="radio" id="star5" name="rating" value="5" />
                                 <label for="star5" title="5 stelle">&#9733;</label>
                                 <input type="radio" id="star4" name="rating" value="4" />
@@ -56,7 +56,7 @@ export default {
                                 <label for="star1" title="1 stella">&#9733;</label>
                             </div>
                             <div>
-                                <button class="btn btn-sm btn-success" type="submit">invia</button>
+                                <button class="btn btn-sm btn-success" type="submit">Vota!</button>
                             </div>
                         </form>
                     </div>
@@ -90,13 +90,13 @@ export default {
                         <div class="row">
                             <div class="col-6">
                                 <form action="http://127.0.0.1:8000/messages/create" method="GET">
-                                    <input type="hidden" name="slug" :value="this.doctor.slug">
+                                    <input type="hidden" name="doctor_id" :value="this.doctor.id">
                                     <button class="btn btn-sm btn-success" type="submit"><i class="fa-solid fa-message" style="color: #ffffff;"></i></button>
                                 </form>
                             </div>
                             <div class="col-6">
                                 <form action="http://127.0.0.1:8000/reviews/create" method="GET">
-                                    <input type="hidden" name="slug" :value="this.doctor.slug">
+                                    <input type="hidden" name="doctor_id" :value="this.doctor.id">
                                     <button class="btn btn-sm btn-success" type="submit"><i class="fa-solid fa-book-open" style="color: #ffffff;"></i></button>
                                 </form>
                             </div>
