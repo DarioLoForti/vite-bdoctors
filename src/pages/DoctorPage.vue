@@ -26,79 +26,86 @@ export default {
 }
 </script>
 <template lang="">
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center my-4">
-                    <h1>Dr. {{ this.doctor.user.name }} {{ this.doctor.user.surname }}</h1>
+    <div class="container-fluid bg-gray py-3 ">
+        <div class="container raised-effect ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center my-4">
+                        <h1>Dr. {{ this.doctor.user.name }} {{ this.doctor.user.surname }}</h1>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-6 mb-4">
-                    <img class="" :src="doctor.image" :alt="doctor.user.name">
-                    <div class="col-5 mt-3">
-
-                        <label class="form-label" for="rating">Vuoi dare un voto a Dr. {{this.doctor.user.surname}}?</label>
-                        <form action="http://127.0.0.1:8000/ratings/create" method="GET">
-                            <div class="rating">
-                                <input type="hidden" name="doctor_id" :value="this.doctor.id">
-                                <input type="radio" id="star5" name="rating" value="5" />
-                                <label for="star5" title="5 stelle">&#9733;</label>
-                                <input type="radio" id="star4" name="rating" value="4" />
-                                <label for="star4" title="4 stelle">&#9733;</label>
-                                <input type="radio" id="star3" name="rating" value="3" />
-                                <label for="star3" title="3 stelle">&#9733;</label>
-                                <input type="radio" id="star2" name="rating" value="2" />
-                                <label for="star2" title="2 stelle">&#9733;</label>
-                                <input type="radio" id="star1" name="rating" value="1" />
-                                <label for="star1" title="1 stella">&#9733;</label>
-                            </div>
-                            <div>
-                                <button class="btn btn-sm btn-success" type="submit">Vota!</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="mb-3">
-                        <strong>Email:</strong> 
-                        {{ this.doctor.user.email }}     
-                    </div>
-                    <div class="mb-3">
-                        <strong>Numero di telefono:</strong> 
-                        {{ this.doctor.phone }}     
-                    </div>
-                    <div class="mb-3">
-                        <strong>Città:</strong> 
-                        {{ this.doctor.city }}     
-                    </div>
-                    <div class="mb-3">
-                        <strong>Indirizzo:</strong> 
-                        {{ this.doctor.user.address }}     
-                    </div>
-                    <div class="mb-3">
-                        <strong>Prestazioni:</strong> 
-                        {{ this.doctor.services }}     
-                    </div>
-                    <div class="mb-3">
-                        <strong>Curriculum: </strong> 
-                        <a href="#" target="_blank">Visualizza Curriculum</a>  
-                    </div>
-                    <div class="container my-5">
-                        <div class="row">
-                            <div class="col-6">
-                                <form action="http://127.0.0.1:8000/messages/create" method="GET">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 mb-4 ">
+                        <img class="raised-effect border" :src="doctor.image" :alt="doctor.user.name">
+                        <div class="col-5 mt-3">
+    
+                            <label class="form-label ms-4" for="rating">Vuoi dare un voto a Dr. {{this.doctor.user.surname}}?</label>
+                            <form action="http://127.0.0.1:8000/ratings/create" method="GET">
+                                <div class="rating ms-3">
                                     <input type="hidden" name="doctor_id" :value="this.doctor.id">
-                                    <button class="btn btn-sm btn-success" type="submit"><i class="fa-solid fa-message" style="color: #ffffff;"></i></button>
-                                </form>
-                            </div>
+                                    <input type="radio" id="star5" name="rating" value="5" />
+                                    <label for="star5" title="5 stelle">&#9733;</label>
+                                    <input type="radio" id="star4" name="rating" value="4" />
+                                    <label for="star4" title="4 stelle">&#9733;</label>
+                                    <input type="radio" id="star3" name="rating" value="3" />
+                                    <label for="star3" title="3 stelle">&#9733;</label>
+                                    <input type="radio" id="star2" name="rating" value="2" />
+                                    <label for="star2" title="2 stelle">&#9733;</label>
+                                    <input type="radio" id="star1" name="rating" value="1" />
+                                    <label for="star1" title="1 stella">&#9733;</label>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <button class="btn btn-sm btn-success" type="submit">Vota!</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <strong>Email:</strong> 
+                            {{ this.doctor.user.email }}     
+                        </div>
+                        <div class="mb-3">
+                            <strong>Numero di telefono:</strong> 
+                            {{ this.doctor.phone }}     
+                        </div>
+                        <div class="mb-3">
+                            <strong>Città:</strong> 
+                            {{ this.doctor.city }}     
+                        </div>
+                        <div class="mb-3">
+                            <strong>Indirizzo:</strong> 
+                            {{ this.doctor.user.address }}     
+                        </div>
+                        <div class="mb-3">
+                            <strong>Prestazioni:</strong> 
+                            
                             <div class="col-6">
-                                <form action="http://127.0.0.1:8000/reviews/create" method="GET">
-                                    <input type="hidden" name="doctor_id" :value="this.doctor.id">
-                                    <button class="btn btn-sm btn-success" type="submit"><i class="fa-solid fa-book-open" style="color: #ffffff;"></i></button>
-                                </form>
+                                {{ this.doctor.services }}     
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <strong>Curriculum: </strong> 
+                            <a href="#" target="_blank">Visualizza Curriculum</a>  
+                        </div>
+                        <div class="container my-5">
+                            <div class="row">
+                                <div class="col-6 d-flex justify-content-center">
+                                    <p class="mt-1">Prenota un appuntamento</p>
+                                    <form action="http://127.0.0.1:8000/messages/create" method="GET">
+                                        <input type="hidden" name="doctor_id" :value="this.doctor.id">
+                                        <button class="btn btn-sm btn-success ms-3" type="submit"><i class="fa-solid fa-message" style="color: #ffffff;"></i></button>
+                                    </form>
+                                </div>
+                                <div class="col-6 d-flex justify-content-center">
+                                    <p class="mt-1">Lascia una recenzione</p>
+                                    <form action="http://127.0.0.1:8000/reviews/create" method="GET">
+                                        <input type="hidden" name="doctor_id" :value="this.doctor.id">
+                                        <button class="btn btn-sm btn-success ms-3" type="submit"><i class="fa-solid fa-book-open" style="color: #ffffff;"></i></button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -140,5 +147,16 @@ img{
 .rating > label:hover ~ input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label:hover ~ label {
     color: #f1c40f;
+}
+.raised-effect {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    transform: perspective(1000px);
+    background-color: white;
+}
+.bg-gray{
+    background-color: rgb(215, 213, 213);
+}
+.border{
+    border-radius: 10%;
 }
 </style>
