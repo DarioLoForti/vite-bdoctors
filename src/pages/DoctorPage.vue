@@ -92,6 +92,7 @@ export default {
                             <a href="#" target="_blank">Visualizza Curriculum</a>  
                         </div>
                         
+                        </div>
                         <div class="container my-5">
                             <div class="row">
                                 <div class="col-6 d-flex justify-content-center">
@@ -112,7 +113,21 @@ export default {
                         </div>
                     </div>
                 </div>
-                
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        <div class="mb-3">
+                            <div class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Recensioni
+                            </div>
+                            <div class="collapse" id="collapseExample">
+                            <div v-for="review, index in this.doctor.reviews">
+                                <span><strong>{{review.name}}</strong>: </span>
+                                <span>{{review.text}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
