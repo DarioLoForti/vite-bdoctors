@@ -46,7 +46,8 @@ export default {
 .color-card{
     background-color: #285a8c;
     border-radius: 20px;
-    border: 0px;
+    border: 4px solid transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     
 
     &:hover{
