@@ -108,7 +108,7 @@ export default {
                 </div>
                 <div class="row">
                     <div class="col-2"></div>
-                    <div class="col-8">
+                    <div class="col-8" style="white-space: pre-line;">
                         <p class="text-center"><strong>Prestazioni</strong></p>
                         {{ this.doctor.services }}                       
                     </div>
