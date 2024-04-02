@@ -90,6 +90,12 @@ export default {
                             <strong>Curriculum: </strong> 
                             <a href="#" target="_blank">Visualizza Curriculum</a>  
                         </div>
+                        <div class="mb-3">
+                            <div v-for="review, index in this.doctor.reviews">
+                                <span><strong>{{review.name}}</strong>: </span>
+                                <span>{{review.text}}</span>
+                            </div>
+                        </div>
                         <div class="container my-5">
                             <div class="row">
                                 <div class="col-6 d-flex justify-content-center">
