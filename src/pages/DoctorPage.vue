@@ -117,23 +117,17 @@ export default {
                     <div class="col-2"></div>
                     <div class="col-8">
                         <div class="mb-3">
-                            <div class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                Recensioni
-                            </div>
-                            <div class="collapse" id="collapseExample">
                             <div v-for="review, index in this.doctor.reviews">
-                                <span><strong>{{review.name}}</strong>: </span>
-                                <span>{{review.text}}</span>
+                                <span class="my-3"><strong>{{review.name}}</strong>: </span><br>
+                                <span class="message-text my-3">{{ new Date(review.created_at).toLocaleString('it-IT', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }) }}</span><br>
+                                <span class="my-3">{{review.text}}</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-       
-    </div>
+    
 </template>
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;

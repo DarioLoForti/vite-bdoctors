@@ -77,7 +77,7 @@ export default {
             </div>
 
             <div class="row my-5">
-                <div class="col-12">
+                <div class="col-8">
                     <div class="bg-grey p-3">
                         <h3>Le specializzazioni più richieste:</h3>
                         <div class="row">
