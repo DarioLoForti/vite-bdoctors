@@ -106,6 +106,10 @@ export default {
 .btn-cerca{
     background-color: #66cc99;
     color: white;
+    &:hover{
+        border: 1px solid #66cc99;
+        color: #66cc99;
+    }
 }
     
 </style>
