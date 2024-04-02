@@ -81,17 +81,8 @@ export default {
                             {{ this.doctor.user.address }}     
                         </div>
                         <div class="mb-3">
-                            <strong>Prestazioni:</strong> 
-                            
-                            <div class="col-6">
-                                {{ this.doctor.services }}     
-                            </div>
-                        </div>
-                        <div class="mb-3">
                             <strong>Curriculum: </strong> 
                             <a href="#" target="_blank">Visualizza Curriculum</a>  
-                        </div>
-                        
                         </div>
                         <div class="container my-5">
                             <div class="row">
@@ -111,11 +102,21 @@ export default {
                                 </div>
                             </div>
                         </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-2"></div>
                     <div class="col-8">
+                        <p class="text-center"><strong>Prestazioni</strong></p>
+                        {{ this.doctor.services }}                       
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        <p class="text-center"><strong>Recensioni</strong></p>
                         <div class="mb-3">
                             <div v-for="review, index in this.doctor.reviews">
                                 <span class="my-3"><strong>{{review.name}}</strong>: </span><br>
