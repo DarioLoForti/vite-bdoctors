@@ -246,7 +246,7 @@ main{
 }
 .my-card{
     flex: 0 0 auto;
-    width: 300px;
+    width: 500px;
     margin-right: 10px;
     overflow-y: hidden;
     max-height: 600px; 
@@ -278,7 +278,7 @@ main{
     flex: 1; 
     display: flex; 
     flex-direction: column;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
   }
   .flip-card-inner::-webkit-scrollbar {
@@ -297,7 +297,7 @@ main{
     background-color: white;
     color: black;
     overflow-x: hidden;
-    overflow-y: scroll; 
+    overflow-y: hiddenl; 
     white-space: pre-line;
   }
 
