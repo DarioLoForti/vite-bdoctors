@@ -22,7 +22,19 @@ export default {
                     store.specializations = response.data.response;
                 })
             }
-        }
+        },
+        scrollLeft() {
+            const container = this.$el.querySelector('.my-card-col');
+            container.scrollLeft -= 300; 
+        },
+        scrollRight() {
+            const container = this.$el.querySelector('.my-card-col');
+            container.scrollLeft += 300;
+        },
+        stars(vote){
+            const numStars = (vote).toFixed(0);
+            return '★'.repeat(numStars) + '☆'.repeat(5 - numStars);
+        },
     }
 }
 </script>
@@ -131,7 +143,7 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container  rel">
             <div class="row my-5">
                 <div class="col-12 col-md-8">
                     <div class="ms-5">
@@ -149,114 +161,23 @@ export default {
         </div>
             <div class="container">
                 <div class="row my-5">
-                    <div class="col-12 d-flex justify-content-center">
-                        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="card" style="width: 100%;" >
-                                        <div class="card-body">
-                                            <h5 class="card-title">Navigazione semplice e veloce</h5>
-                                            <p class="card-text">Ho trovato il sito estremamente facile da usare per trovare un dottore specialista adatto alle mie esigenze. La barra di ricerca intuitiva e la possibilità di filtrare i risultati in base alla specializzazione, alla posizione e alle recensioni dei pazienti hanno reso il processo di selezione rapido e senza stress. Grazie alla struttura chiara e organizzata del sito, ho potuto prenotare una visita con il dottore giusto in pochi minuti. Consiglio vivamente questo sito a chiunque cerchi un modo semplice e conveniente per gestire la propria salute</p>
-                                            <p class="card-text"><small class="text-muted">- Nome dell'Autore</small></p>
-                                            <div class="d-flex">
-                                              <span class="me-2">Voto:</span>
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                </div>
-                                            </div>
+                    <div class="my-card-col">
+                        <div class="my-card my-2 px-2" v-for="reviews, index in store.review" :key="index">      
+                            <div class="flip-card my-4" >
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front mx-3">
+                                        <h5> {{ reviews.titolo }}</h5>
+                                        <h6> {{ reviews.testo }}</h6>
+                                        <p> {{ reviews.autore }}</p>
+                                        <div class="voto"> 
+                                            <h6>Voto: <span class="stars">{{ stars(reviews.voto) }}</span></h6>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="carousel-item">
-                                    <div class="card" style="width: 100%;" >
-                                        <div class="card-body">
-                                            <h5 class="card-title">Esperienza utente impeccabile</h5>
-                                            <p class="card-text">La mia esperienza con questo sito è stata estremamente positiva grazie alla sua interfaccia utente intuitiva e ben progettata. La possibilità di cercare dottori per specializzazione e posizione ha reso la ricerca molto efficiente, mentre le schede dettagliate dei dottori con informazioni chiare e recensioni dei pazienti mi hanno aiutato a prendere una decisione informata. Inoltre, il processo di prenotazione online è stato rapido e senza intoppi. Grazie a questo sito, ho trovato il dottore perfetto per le mie esigenze in pochi clic.</p>
-                                            <p class="card-text"><small class="text-muted">- Nome dell'Autore</small></p>
-                                            <div class="d-flex">
-                                              <span class="me-2">Voto:</span>
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="card" style="width: 100%;" >
-                                        <div class="card-body">
-                                            <h5 class="card-title">Navigazione intuitiva e personalizzata</h5>
-                                            <p class="card-text">Sono rimasto impressionato dalla facilità con cui ho potuto trovare un dottore specialista tramite questo sito. La sua interfaccia utente intuitiva mi ha permesso di cercare e filtrare i risultati in base alle mie esigenze specifiche, garantendomi di trovare rapidamente il dottore più adatto a me. Inoltre, ho apprezzato la funzionalità di salvataggio dei preferiti, che mi ha permesso di tenere traccia dei dottori che mi interessavano di più per confrontarli in seguito. Grazie alla sua navigazione fluida e personalizzata, questo sito si è dimostrato un prezioso strumento nella gestione della mia salute.</p>
-                                            <p class="card-text"><small class="text-muted">- Nome dell'Autore</small></p>
-                                            <div class="d-flex">
-                                              <span class="me-2">Voto:</span>
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="card" style="width: 100%;" >
-                                        <div class="card-body">
-                                            <h5 class="card-title">Interfaccia user-friendly e informativa</h5>
-                                            <p class="card-text">Sono rimasto estremamente soddisfatto dell'esperienza di utilizzo di questo sito. La sua interfaccia user-friendly mi ha permesso di navigare facilmente attraverso le varie opzioni di ricerca per trovare il dottore specialista di cui avevo bisogno. Le schede dettagliate dei dottori, complete di informazioni sulla loro formazione, esperienza e recensioni dei pazienti, mi hanno aiutato a prendere una decisione informata. Inoltre, apprezzo la sezione delle domande frequenti e le risorse informative che il sito offre, che mi hanno fornito ulteriori dettagli sui diversi trattamenti e procedure disponibili. Consiglio vivamente questo sito a chiunque cerchi una piattaforma intuitiva e informativa per la ricerca di un dottore specialista.</p>
-                                            <p class="card-text"><small class="text-muted">- Nome dell'Autore</small></p>
-                                            <div class="d-flex">
-                                              <span class="me-2">Voto:</span>
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="card" style="width: 100%;" >
-                                        <div class="card-body">
-                                            <h5 class="card-title">Ricerca rapida e accurata, prenotazione senza sforzo</h5>
-                                            <p class="card-text">Ho trovato il processo di ricerca e prenotazione di un dottore tramite questo sito incredibilmente semplice e diretto. La funzionalità di ricerca rapida mi ha permesso di trovare facilmente dottori in base alla loro specializzazione e posizione, mentre i filtri aggiuntivi per valutazioni dei pazienti e disponibilità degli appuntamenti hanno affinato ulteriormente i risultati. Una volta scelto il dottore desiderato, la procedura di prenotazione è stata altrettanto semplice e senza sforzo. In breve, questo sito ha reso il processo di trovare e prenotare un dottore un'esperienza piacevole e priva di stress. Lo consiglio vivamente a chiunque cerchi una soluzione conveniente e efficiente per le proprie esigenze mediche.</p>
-                                            <p class="card-text"><small class="text-muted">- Nome dell'Autore</small></p>
-                                            <div class="d-flex justify-content-center">
-                                              <span class="me-2">Voto:</span>
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                    <span class="fa fa-star checked" style="color: #cda434;"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden ">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+                            </div>   
                         </div>
+                        <button @click="scrollLeft" class="scroll-button-left"><i class="fa-solid fa-circle-arrow-left"></i></button>
+                        <button @click="scrollRight" class="scroll-button-right"><i class="fa-solid fa-circle-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -264,7 +185,9 @@ export default {
 </template>
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
-
+main{
+    position: relative;
+}
     .jumbotron{
         background-color: #66cc99;
 
@@ -315,11 +238,83 @@ export default {
         }
     }
 
-.carousel-control-prev,
-.carousel-control-next {
+.my-card-col {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow-x: hidden;
+    white-space: nowrap;
+    
+}
+.my-card{
+    flex: 0 0 auto;
+    width: 300px;
+    margin-right: 10px;
+    overflow-y: hidden;
+    max-height: 600px; 
+    
+   }
+   .stars{
+    color: gold;
+   }
+   
+   .flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 400px;
+    perspective: 1000px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+  }
+ 
+  .flip-card-inner {
+   
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    flex: 1; 
+    display: flex; 
+    flex-direction: column;
+  }
+  
+ 
+  .flip-card-front, .flip-card-back {
+   
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .flip-card-front {
+    background-color: white;
+    color: black;
+    overflow-x: hidden;
+    overflow-y: scroll; 
+    white-space: pre-line;
+  }
+
+  .scroll-button-left {
+    position: absolute;
+    bottom: 7%;
+    left: 10%;
+    background-color: #66cc99;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+.scroll-button-right {
+    position: absolute;
+    bottom: 7%;
+    right: 10%;
+    background-color: #66cc99;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
 }
 
 </style>
