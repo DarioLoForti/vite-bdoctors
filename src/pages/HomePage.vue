@@ -284,7 +284,11 @@ main{
   .flip-card-inner::-webkit-scrollbar {
     display: none; 
 }
-
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .flip-card-inner::-webkit-scrollbar {
+        display: none;
+    }
+}
  
   .flip-card-front, .flip-card-back {
    
