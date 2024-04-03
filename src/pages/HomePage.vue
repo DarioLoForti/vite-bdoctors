@@ -167,8 +167,8 @@ export default {
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front mx-3">
                                         <h5> {{ reviews.titolo }}</h5>
-                                        <h6> {{ reviews.testo }}</h6>
-                                        <p> {{ reviews.autore }}</p>
+                                        <p> {{ reviews.testo }}</p>
+                                        <h6> {{ reviews.autore }}</h6>
                                         <div class="voto"> 
                                             <h6>Voto: <span class="stars">{{ stars(reviews.voto) }}</span></h6>
                                         </div>
@@ -259,12 +259,14 @@ main{
    .flip-card {
     background-color: transparent;
     width: 100%;
-    height: 400px;
+    max-height: 400px;
     perspective: 1000px;
     display: flex;
     flex-direction: column;
-    overflow-y: hidden;
+    overflow: hidden;
   }
+
+
  
   .flip-card-inner {
    
@@ -276,12 +278,17 @@ main{
     flex: 1; 
     display: flex; 
     flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
-  
+  .flip-card-inner::-webkit-scrollbar {
+    display: none; 
+}
+
  
   .flip-card-front, .flip-card-back {
    
-    width: 100%;
+    width: 90%;
     height: 100%;
     backface-visibility: hidden;
   }
