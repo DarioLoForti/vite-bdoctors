@@ -36,7 +36,6 @@ export default {
         ratingOrder: this.ratingOrder,
     }
 }).then((response) => {
-    console.log(response.data);
     if (response.data.success) {
         this.success = true;
         this.doctors = response.data.doctors;
