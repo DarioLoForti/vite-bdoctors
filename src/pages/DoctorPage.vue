@@ -21,7 +21,19 @@ export default {
             axios.get(`${this.store.baseUrl}/api/doctor/${this.$route.params.slug}`).then((response)=>{
                 this.doctor = response.data.response;
             })
-        }
+        },
+        scrollLeft() {
+            const container = this.$el.querySelector('.my-card-col');
+            container.scrollLeft -= 442; 
+        },
+        scrollRight() {
+            const container = this.$el.querySelector('.my-card-col');
+            container.scrollLeft += 442;
+        },
+        stars(vote){
+            const numStars = (vote).toFixed(0);
+            return '★'.repeat(numStars) + '☆'.repeat(5 - numStars);
+        },
     }
 }
 </script>
@@ -113,17 +125,22 @@ export default {
                         {{ this.doctor.services }}                       
                     </div>
                 </div>
-                <div class="row mt-5">
-                    <div class="col-2"></div>
-                    <div class="col-8">
-                        <p class="text-center"><strong>Recensioni</strong></p>
-                        <div class="mb-3">
-                            <div v-for="review, index in this.doctor.reviews">
-                                <span class="my-3"><strong>{{review.name}}</strong>: </span><br>
-                                <span class="message-text my-3">{{ new Date(review.created_at).toLocaleString('it-IT', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }) }}</span><br>
-                                <span class="my-3">{{review.text}}</span>
-                            </div>
+                <div class="row mt-5 position-relative ">
+                    <h4 class="text-center mt-3"><strong>Recensioni</strong></h4>
+                    <div class="my-card-col">
+                        <div class="my-card my-2 px-2" v-for="review, index in this.doctor.reviews" :key="index">      
+                            <div class="flip-card my-4" >
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front mx-3">
+                                        <span class=""><strong>{{review.name}}</strong> </span><br>
+                                        <span class="message-text ">{{ new Date(review.created_at).toLocaleString('it-IT', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }) }}</span><br>
+                                        <span class="">{{review.text}}</span><br>
+                                    </div>
+                                </div>
+                            </div>   
                         </div>
+                        <button @click="scrollLeft" class="scroll-button left"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></button>
+                        <button @click="scrollRight" class="scroll-button right"><i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i></button>
                     </div>
                 </div>
             </div>
@@ -174,5 +191,90 @@ img{
 }
 .border{
     border-radius: 10%;
+}
+.my-card-col {
+    display: flex;
+    overflow-x: hidden;
+    white-space: nowrap;
+   
+    
+}
+.my-card{
+    flex: 0 0 auto;
+    width: calc(100%/3);
+    margin-right: 10px;
+    overflow-y: hidden;
+    max-height: 600px; 
+    
+   }
+   .stars{
+    color: gold;
+   }
+   
+   .flip-card {
+    background-color: transparent;
+    width: 100%;
+    max-height: 400px;
+    perspective: 1000px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+
+ 
+  .flip-card-inner {
+   
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    flex: 1; 
+    display: flex; 
+    flex-direction: column;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  .flip-card-inner::-webkit-scrollbar {
+    display: none; 
+}
+
+ 
+  .flip-card-front, .flip-card-back {
+   
+    width: 90%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .flip-card-front {
+    background-color: white;
+    color: black;
+    overflow-x: hidden;
+    overflow-y: hidden; 
+    white-space: pre-line;
+  }
+
+  .scroll-button {
+    position: absolute;
+    background-color: #285a8c;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+    bottom: 45%;
+}
+
+.left{
+    left: 0%;
+}
+.right{
+    right: 0%;
+}
+.message-text{
+    font-size: 12px;
+    color: grey;
 }
 </style>
