@@ -12,6 +12,7 @@ export default {
         return{
             store,
             doctors: [],
+            sponsored: [],
             specialization: store.specrequest,
             namestring: '',
             city: '',
@@ -36,10 +37,13 @@ export default {
                     ratingOrder: this.ratingOrder,
                 }
             }).then((response)=>{
+                console.log(response.data);
                 if(response.data.success){
                     this.success = true;
                     this.doctors = [];
-                    this.doctors = response.data.response;
+                    this.sponsored = [];
+                    this.sponsored = response.data.sponsored;
+                    this.doctors = response.data.doctors;
                 }
                 else{
                     this.success = false;

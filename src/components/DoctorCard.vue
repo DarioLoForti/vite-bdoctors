@@ -13,7 +13,7 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="col-12 col-md-6 col-lg-3">
+    <div class="col-12 col-md-6 col-lg-3"> <!-- :class="doctor.sponsorships.length > 0 ? 'border border-danger' : ''" -->
         <router-link class="text-decoration-none " :to="{name: 'doctor', params: {slug: doctor.slug}}">
             <div class="mb-3 card color-card">
                 <img class="my-img" :src="doctor.image" :alt="doctor.user.name">
@@ -24,7 +24,7 @@ export default {
                     </h3>
                     <p>{{doctor.city}}</p>
                     <p>
-                        <span>{{parseFloat(doctor.ratings_avg_rating).toFixed(1)}}</span>
+                        <span>{{parseFloat(doctor.ratings_avg_rating).toFixed(1)}} / 5</span>
                     </p>
                 </div>
             </div>
