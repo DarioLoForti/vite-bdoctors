@@ -26,9 +26,9 @@ dropdowns.forEach(dropdown => {
                             <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-size bg-dropdown text-center" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href=""><router-link class="text-white" :to="{ name: 'home' }">Home</router-link></a></li>
+                            <li ><a class="dropdown-item bg" href=""><router-link class="text-white " :to="{ name: 'home' }">Home</router-link></a></li>
                             <li><hr></li>
-                            <li><a class="dropdown-item" href=""><router-link class="text-white" :to="{ name: 'search' } ">I nostri Dottori</router-link></a></li>
+                            <li ><a class="dropdown-item bg" href=""><router-link class="text-white" :to="{ name: 'search' } ">I nostri Dottori</router-link></a></li>
                         </ul>
                     </li>
                 </div>
@@ -94,4 +94,8 @@ header{
 .dropdown-size{
     width: 100vw;
 }
+.bg:hover{
+    background-color: #285a8c;
+}
+
 </style>

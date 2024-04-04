@@ -24,11 +24,23 @@ export default {
         },
         scrollLeft() {
             const container = this.$el.querySelector('.my-card-col');
-            container.scrollLeft -= 442; 
+            if (container.scrollLeft === 0) {
+                
+                container.scrollLeft = container.scrollWidth - container.clientWidth;
+            } else {
+                container.scrollLeft -= 442;
+            }
         },
+
         scrollRight() {
             const container = this.$el.querySelector('.my-card-col');
-            container.scrollLeft += 442;
+            if (container.scrollLeft + container.clientWidth === container.scrollWidth) {
+                
+                container.scrollLeft = 0;
+            } else {
+                container.scrollLeft += 447;
+            }
+        
         },
         stars(vote){
             const numStars = (vote).toFixed(0);
