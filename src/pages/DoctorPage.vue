@@ -25,7 +25,7 @@ export default {
         scrollLeft() {
             const container = this.$el.querySelector('.my-card-col');
             if (container.scrollLeft === 0) {
-                // Se siamo all'inizio del contenuto, riavvolgi alla fine
+                
                 container.scrollLeft = container.scrollWidth - container.clientWidth;
             } else {
                 container.scrollLeft -= 442;
@@ -35,7 +35,7 @@ export default {
         scrollRight() {
             const container = this.$el.querySelector('.my-card-col');
             if (container.scrollLeft + container.clientWidth === container.scrollWidth) {
-                // Se siamo alla fine del contenuto, riavvolgi al primo elemento
+                
                 container.scrollLeft = 0;
             } else {
                 container.scrollLeft += 447;
