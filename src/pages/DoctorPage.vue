@@ -63,9 +63,10 @@ export default {
                             
                         </div>
                     </div>
+
                     <div class="col-6">
                         <div class="mb-3">
-                            <strong>Email:</strong> 
+                            <strong>Email:</strong>
                             {{ this.doctor.user.email }}     
                         </div>
                         <div class="mb-3">
