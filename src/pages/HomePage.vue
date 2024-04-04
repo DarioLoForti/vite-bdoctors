@@ -1,21 +1,55 @@
 <script>
+import DoctorCard from '../components/DoctorCard.vue';
 import { store } from '../store.js';
 import axios from'axios';
 
 export default {
     name: 'HomePage',
     components: {
-
+        DoctorCard,
     },
     data(){
         return{
             store,
+            doctors: [],
+            sponsored: [],
+            specialization: store.specrequest,
+            namestring: '',
+            city: '',
+            reviewOrder: "DESC",
+            ratingOrder: "DESC", 
+            success: null,
+            
         }
     },
     created(){
         this.getSpecializations();
+        this.getDoctors();
     },
     methods: {
+        getDoctors() {
+    axios.get(`${this.store.baseUrl}/api/doctors`, {
+        params: {
+            specialization: this.specialization,
+            namestring: this.namestring.split(" ").join(""),
+            city: this.city,
+            reviewOrder: this.reviewOrder,
+            ratingOrder: this.ratingOrder,
+        }
+    }).then((response) => {
+        console.log(response.data);
+        if (response.data.success) {
+            this.success = true;
+            this.doctors = response.data.doctors;
+            this.sponsored = response.data.sponsored;
+
+            // Filtra i medici sponsorizzati
+            this.doctors = this.doctors.filter(doctor => this.sponsored.includes(doctor));
+        } else {
+            this.success = false;
+        }
+    })
+},
         getSpecializations(){
             if(store.specializations = []){
                 axios.get(`${this.store.baseUrl}/api/specializations`).then((response)=>{
@@ -23,6 +57,13 @@ export default {
                 })
             }
         },
+        // getSponsorships() {
+        //     if (store.sponsorships = []) {
+        //         axios.get(`${this.store.baseUrl}/api/sponsorships`).then((response) => {
+        //                 store.sponsorships = response.data.response;
+        //             })
+        //         }
+        //     },
         scrollLeft() {
             const container = this.$el.querySelector('.my-card-col');
             container.scrollLeft -= 400; 
@@ -103,6 +144,15 @@ export default {
                         </div>
                     </div>
                 </div>
+            </div>  
+            <h3 class="text-center">I nostri medici sponsorizzati</h3>
+            <div v-if="this.success && this.sponsored.length > 0" class="container my-5">
+                <div class="row g-2">
+                    <DoctorCard v-for="doctor in this.sponsored" :key="doctor.id" :doctor="doctor"/>
+                </div>
+            </div>
+            <div v-else class="my-5">
+                Nessun medico sponsorizzato trovato che soddisfi la ricerca.
             </div>
             <div class="row my-5">
                 <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-3">
@@ -185,9 +235,7 @@ export default {
 </template>
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
-main{
-    
-}
+
     .jumbotron{
         background-color: #66cc99;
 

@@ -26,30 +26,34 @@ export default {
         this.getSpecializations();
     },
     methods: {
-        getDoctors(){
-            axios.get(`${this.store.baseUrl}/api/doctors`,
-            {
-                params:{
-                    specialization: this.specialization,
-                    namestring: this.namestring.split(" ").join(""),
-                    city: this.city,
-                    reviewOrder: this.reviewOrder,
-                    ratingOrder: this.ratingOrder,
-                }
-            }).then((response)=>{
-                console.log(response.data);
-                if(response.data.success){
-                    this.success = true;
-                    this.doctors = [];
-                    this.sponsored = [];
-                    this.sponsored = response.data.sponsored;
-                    this.doctors = response.data.doctors;
-                }
-                else{
-                    this.success = false;
-                }
-            })
-        },
+        getDoctors() {
+            axios.get(`${this.store.baseUrl}/api/doctors`, {
+    params: {
+        specialization: this.specialization,
+        namestring: this.namestring.split(" ").join(""),
+        city: this.city,
+        reviewOrder: this.reviewOrder,
+        ratingOrder: this.ratingOrder,
+    }
+}).then((response) => {
+    console.log(response.data);
+    if (response.data.success) {
+        this.success = true;
+        this.doctors = response.data.doctors;
+        this.sponsored = response.data.sponsored;
+
+        // Aggiungi i medici non sponsorizzati ai risultati
+        let nonSponsoredDoctors = this.doctors.filter(doctor => !this.sponsored.some(sponsoredDoctor => sponsoredDoctor.id === doctor.id));
+
+        // Unisci i medici sponsorizzati e non sponsorizzati senza duplicati
+        this.doctors = this.sponsored.concat(nonSponsoredDoctors);
+    } else {
+        this.success = false;
+    }
+}).catch((error) => {
+    console.error("Error fetching doctors:", error);
+});
+    },
         getSpecializations(){
             if(store.specializations = []){
                 axios.get(`${this.store.baseUrl}/api/specializations`).then((response)=>{

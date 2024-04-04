@@ -129,7 +129,7 @@ export const store = reactive({
             label: 'Specializzazioni',
         },
     ],
-
+    sponsorships: [],
     specializations: [],
     specrequest: '',
 });
