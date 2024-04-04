@@ -25,11 +25,11 @@ export default {
         },
         scrollLeft() {
             const container = this.$el.querySelector('.my-card-col');
-            container.scrollLeft -= 300; 
+            container.scrollLeft -= 400; 
         },
         scrollRight() {
             const container = this.$el.querySelector('.my-card-col');
-            container.scrollLeft += 300;
+            container.scrollLeft += 400;
         },
         stars(vote){
             const numStars = (vote).toFixed(0);
@@ -160,7 +160,7 @@ export default {
             </div>
         </div>
             <div class="container">
-                <div class="row my-5">
+                <div class="row my-5 position-relative">
                     <div class="my-card-col">
                         <div class="my-card my-2 px-2" v-for="reviews, index in store.review" :key="index">      
                             <div class="flip-card my-4" >
@@ -176,8 +176,8 @@ export default {
                                 </div>
                             </div>   
                         </div>
-                        <button @click="scrollLeft" class="scroll-button-left"><i class="fa-solid fa-circle-arrow-left"></i></button>
-                        <button @click="scrollRight" class="scroll-button-right"><i class="fa-solid fa-circle-arrow-right"></i></button>
+                        <button @click="scrollLeft" class="scroll-button-left"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></button>
+                        <button @click="scrollRight" class="scroll-button-right"><i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i></button>
                     </div>
                 </div>
             </div>
@@ -186,7 +186,7 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
 main{
-    position: relative;
+    
 }
     .jumbotron{
         background-color: #66cc99;
@@ -246,7 +246,7 @@ main{
 }
 .my-card{
     flex: 0 0 auto;
-    width: 500px;
+    width: calc(100% / 3);
     margin-right: 10px;
     overflow-y: hidden;
     max-height: 600px; 
@@ -259,7 +259,7 @@ main{
    .flip-card {
     background-color: transparent;
     width: 100%;
-    max-height: 400px;
+    max-height: 500px;
     perspective: 1000px;
     display: flex;
     flex-direction: column;
@@ -303,10 +303,10 @@ main{
 
   .scroll-button-left {
     position: absolute;
-    bottom: 7%;
-    left: 10%;
-    background-color: #66cc99;
-    border: 1px solid black;
+    bottom: 50%;
+    left: -10%;
+    background-color: #285a8c;
+    border: 1px solid white;
     border-radius: 50%;
     padding: 10px;
     cursor: pointer;
@@ -314,10 +314,10 @@ main{
 }
 .scroll-button-right {
     position: absolute;
-    bottom: 7%;
-    right: 10%;
-    background-color: #66cc99;
-    border: 1px solid black;
+    bottom: 50%;
+    right: -10%;
+    background-color: #285a8c;
+    border: 1px solid white;
     border-radius: 50%;
     padding: 10px;
     cursor: pointer;
