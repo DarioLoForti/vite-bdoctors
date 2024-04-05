@@ -44,7 +44,7 @@ export default {
                     </ul>
                 </div>
                 
-                <div class="col-lg-3 col-12 col-md-6 text-center text-md-start">
+                <div class="col-lg-3 col-12 col-md-6 text-center ">
                     <h4 class="title-footer mb-3">BDoctors
                     </h4>
                     <img src="/logo.png" width="100px" alt="">
