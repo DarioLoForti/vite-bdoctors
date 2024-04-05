@@ -135,8 +135,8 @@ export default {
                         <h3>Le specializzazioni più richieste:</h3>
                         <div class="row">
                             <div class="col-lg-2 col-md-4 col-sm-6" v-for="(specialization, index) in store.specializations" :key="index">
-                                <span class="my-text">
-                                    <router-link class="text-decoration-none" :to="{name: 'search'}" @click="store.specrequest = specialization.slug; console.log(store.specrequest);">
+                                <span class="">
+                                    <router-link class="text-decoration-none my-text" :to="{name: 'search'}" @click="store.specrequest = specialization.slug; console.log(store.specrequest);">
                                         {{ specialization.name }}
                                     </router-link>
                                 </span>
@@ -178,8 +178,8 @@ export default {
                 <div class="col-12 col-md-5">
                     <img src="../../public/doctor-3.png" alt="" class="img-fluid">
                 </div>
-                <div class="col-12 col-md-7 mt-md-5 mt-3">
-                    <h2>Sei un professionista nel settore?</h2>
+                <div class="col-12 col-md-7 mt-md-5 mt-3 text-white">
+                    <h2 class="text-blue">Sei un professionista nel settore?</h2>
                     <h3>Crea il tuo profilo e raggiungi i pazienti nella tua città.</h3>
                     <ul>
                         <li>Ricevi messaggi diretti dai tuoi pazienti</li>
@@ -272,7 +272,8 @@ export default {
     }
 
     .bg-grey{
-        background-color: #f7f9fa;
+        background-color: rgb(234, 234, 234);
+        border-radius: 10px;
     }
 
     .btn-color{
@@ -384,5 +385,7 @@ export default {
     cursor: pointer;
     z-index: 2;
 }
-
+.text-blue{
+    color: #285a8c;
+}
 </style>
