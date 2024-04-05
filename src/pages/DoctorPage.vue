@@ -168,8 +168,8 @@ export default {
                                 </div>
                             </div>   
                         </div>
-                        <button @click="scrollLeft" class="d-none d-md-block scroll-button left "><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></button>
-                        <button @click="scrollRight" class="d-none d-md-block scroll-button right"><i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i></button>
+                        <button @click="scrollLeft" class="d-none d-md-block scroll-button left btn-blue"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></button>
+                        <button @click="scrollRight" class="d-none d-md-block scroll-button right btn-blue"><i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i></button>
                     </div>
                 </div>
             </div>
@@ -315,7 +315,7 @@ display: none;
     padding: 10px;
     cursor: pointer;
     z-index: 2;
-    bottom: 10%;
+    bottom: 25%;
 }
 
 .left{
@@ -335,6 +335,18 @@ display: none;
     &:hover{
         border: 1px solid #66cc99;
         color: #66cc99;
+    }
+}
+
+.btn-blue{
+    
+    background-color: rgba(40, 90, 140 , 0.6);
+    color:  white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    &:hover{
+
+        background-color: #285a8c;
+        color:  white;
     }
 }
 </style>
