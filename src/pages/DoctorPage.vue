@@ -128,7 +128,7 @@ export default {
                         <div class="container my-3 my-md-5">
                             <div class="row">
                                 <div class="col-6 d-flex justify-content-center">
-                                    <h6 class="mt-1 d-none d-md-block ">Prenota un appuntamento</h6>
+                                    <h6 class="mt-1 d-none d-md-block ">Invia un messaggio</h6>
                                     <form action="http://127.0.0.1:8000/messages/create" method="GET" class="posizione-button">
                                         <input type="hidden" name="doctor_id" :value="this.doctor.id">
                                         <button class="btn btn-sm btn-cerca ms-3" type="submit"><i class="fa-solid fa-message " ></i></button>
