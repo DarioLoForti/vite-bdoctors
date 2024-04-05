@@ -81,7 +81,7 @@ export default {
 </script>
 <template lang="">
     <main>
-        <div class="jumbotron d-none d-md-block">
+        <div class="jumbotron d-none d-lg-block">
             <div class="my-container d-flex justify-content-between">
                 <img class='image' src="../../public/doctor-7.png" alt="" >
                     <div class="pt-5">
@@ -94,7 +94,7 @@ export default {
             </div>
         </div>
 
-        <div class="jumbotron d-md-none">
+        <div class="jumbotron d-lg-none">
             <div class="container d-flex text-center flex-column py-5">
                 <h1 class="fs-1 my-text">Il tuo dottore a portata di un Click!</h1>
                 <p class=" text-light fs-5">Filtra le tue ricerche per città e/o specializzazioni. <br>
@@ -106,7 +106,7 @@ export default {
         <div class="container">
             <div class="row my-5">
                 <div class="col-12 col-md-8">
-                    <div class="ms-5">
+                    <div class="ms-md-5">
                         <h2>Sei un Medico o un Centro medico?</h2>
                         <p>Iscriviti e raggiungi nuovi pazienti</p>
                         <p>Più di 2 milioni di pazienti cercano ogni mese il loro Medico su BDoctors,<br> il <strong>primo sito in Italia</strong> per visitatori e numero di prenotazioni.</p>
@@ -132,9 +132,9 @@ export default {
             <div class="row my-5">
                 <div class="col-12">
                     <div class="bg-grey p-3">
-                        <h3>Le specializzazioni più richieste:</h3>
+                        <h3 class="text-center-responsive">Le specializzazioni più richieste:</h3>
                         <div class="row">
-                            <div class="col-lg-2 col-md-4 col-sm-6" v-for="(specialization, index) in store.specializations" :key="index">
+                            <div class="col-lg-2 col-md-4 col-sm-6 text-center-responsive" v-for="(specialization, index) in store.specializations" :key="index">
                                 <span class="">
                                     <router-link class="text-decoration-none my-text" :to="{name: 'search'}" @click="store.specrequest = specialization.slug; console.log(store.specrequest);">
                                         {{ specialization.name }}
@@ -147,7 +147,7 @@ export default {
             </div>  
             <h3 class="text-center">I nostri medici sponsorizzati</h3>
             <div v-if="this.success && this.sponsored.length > 0" class="container my-5">
-                <div class="row g-2">
+                <div class="row g-2  ">
                     <DoctorCard v-for="doctor in this.sponsored" :key="doctor.id" :doctor="doctor"/>
                 </div>
             </div>
@@ -157,19 +157,19 @@ export default {
             <div class="row my-5">
                 <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-3">
                     <h3>Cerca i dottori per città</h3>
-                    <span>Scegli tra oltre 200 000 medici di medicina generale e specialisti. Leggi le recensioni di altri pazienti.</span>
+                    <span class="justify">Scegli tra oltre 200 000 medici di medicina generale e specialisti. Leggi le recensioni di altri pazienti.</span>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-3">
                     <h3>Prenota le tue visite direttamente dal portale</h3>
-                    <span>Scegli la data che preferisci, inserisci i tuoi dati e conferma… la visita è prenotata! Non comporta costi aggiuntivi.</span>
+                    <span class="justify">Scegli la data che preferisci, inserisci i tuoi dati e conferma… la visita è prenotata! Non comporta costi aggiuntivi.</span>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-3">
                     <h3>Prescrizioni mediche</h3>
-                    <span>Richiedi prescrizioni e condividi i risultati di test ed analisi con il tuo medico di medicina generale.</span>
+                    <span class="justify">Richiedi prescrizioni e condividi i risultati di test ed analisi con il tuo medico di medicina generale.</span>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-3">
                     <h3>Ricorda i tuoi appuntamenti tramite SMS</h3>
-                    <span>Ricorderai sempre le tue visite future! Ti ricorderemo della tua visita tramite email e sms.</span>
+                    <span class="justify">Ricorderai sempre le tue visite future! Ti ricorderemo della tua visita tramite email e sms.</span>
                 </div>
             </div>
         </div>
@@ -178,9 +178,9 @@ export default {
                 <div class="col-12 col-md-5">
                     <img src="../../public/doctor-3.png" alt="" class="img-fluid">
                 </div>
-                <div class="col-12 col-md-7 mt-md-5 mt-3 text-white">
-                    <h2 class="text-blue">Sei un professionista nel settore?</h2>
-                    <h3>Crea il tuo profilo e raggiungi i pazienti nella tua città.</h3>
+                <div class="col-12 col-md-7 mt-md-5 mt-3 text-white ">
+                    <h2 class="text-blue text-center-responsive">Sei un professionista nel settore?</h2>
+                    <h3 class="text-center-responsive mb-2">Crea il tuo profilo e raggiungi i pazienti nella tua città.</h3>
                     <ul>
                         <li>Ricevi messaggi diretti dai tuoi pazienti</li>
                         <li>Prenotazione visite h24 7/7</li>
@@ -196,12 +196,12 @@ export default {
         <div class="container  rel">
             <div class="row my-5">
                 <div class="col-12 col-md-8">
-                    <div class="ms-5">
+                    <div class="ms-md-5">
                         <h2>Dicono di noi</h2>
-                        <p>Oltre il 99% di pazienti soddisfatti</p>
-                        <p>BDoctors è il primo sito in Italia di prenotazioni di visite mediche ed esami diagnostici</p>
-                        <p>Crediamo nell'importanza dell'informazione e della trasparenza per aiutare i pazienti a scegliere il medico giusto.</p>
-                        <p>Per questo su BDoctors, solo i pazienti che hanno prenotato attraverso il sito e svolto la prestazione possono rilasciare un feedback sul medico: una garanzia sull'affidabilità..</p>
+                        <p class="justify">Oltre il 99% di pazienti soddisfatti</p>
+                        <p class="justify">BDoctors è il primo sito in Italia di prenotazioni di visite mediche ed esami diagnostici</p>
+                        <p class="justify">Crediamo nell'importanza dell'informazione e della trasparenza per aiutare i pazienti a scegliere il medico giusto.</p>
+                        <p class="justify">Per questo su BDoctors, solo i pazienti che hanno prenotato attraverso il sito e svolto la prestazione possono rilasciare un feedback sul medico: una garanzia sull'affidabilità..</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 ">
@@ -217,7 +217,7 @@ export default {
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front mx-3">
                                         <h5> {{ reviews.titolo }}</h5>
-                                        <p> {{ reviews.testo }}</p>
+                                        <p > {{ reviews.testo }}</p>
                                         <h6> {{ reviews.autore }}</h6>
                                         <div class="voto"> 
                                             <h6>Voto: <span class="stars">{{ stars(reviews.voto) }}</span></h6>
@@ -226,16 +226,17 @@ export default {
                                 </div>
                             </div>   
                         </div>
-                        <button @click="scrollLeft" class="scroll-button-left"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></button>
-                        <button @click="scrollRight" class="scroll-button-right"><i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i></button>
+                        <button @click="scrollLeft" class="scroll-button left "><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></button>
+                        <button @click="scrollRight" class="scroll-button right "><i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i></button>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="row my-5 position-relative d-xl-none">
-                    <div class="col-12 " v-for="reviews, index in store.review" :key="index">
-                        <h5> {{ reviews.titolo }}</h5>
-                            <p> {{ reviews.testo }}</p>
+                    <h2 class="mb-4">Alcune  vostre recensioni</h2>
+                    <div class="col-12 mb-4" v-for="reviews, index in store.review" :key="index">
+                        <h6> {{ reviews.titolo }}</h6>
+                            <p class="justify"> "{{ reviews.testo }}"</p>
                             <h6> {{ reviews.autore }}</h6>
                             <div class="voto"> 
                                 <h6>Voto: <span class="stars">{{ stars(reviews.voto) }}</span></h6>
@@ -363,29 +364,48 @@ export default {
     white-space: pre-line;
   }
 
-  .scroll-button-left {
+  .scroll-button {
     position: absolute;
-    bottom: 50%;
-    left: -10%;
-    background-color: #285a8c;
-    border: 1px solid white;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
+    
+    height: 450px;
+    width: 80px;
     z-index: 2;
+    color:  white;
+    border: 0px;   
+    
 }
-.scroll-button-right {
-    position: absolute;
-    bottom: 50%;
-    right: -10%;
-    background-color: #285a8c;
-    border: 1px solid white;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 2;
+
+.left{
+    left: 0%;
+    background: linear-gradient(to right, rgba(120, 120, 120, 0.198), transparent);
+    border-top-left-radius: 20px ;
+    border-bottom-left-radius: 20px;
+    &:hover{
+        background: linear-gradient(to right, rgba(45, 45, 45, 0.198), transparent);
+       
+    }
+    
+}
+.right{
+    right: 0%;
+    background: linear-gradient(to left,rgba(120, 120, 120, 0.198), transparent);
+    border-top-right-radius: 20px ;
+    border-bottom-right-radius: 20px;
+    &:hover{
+        background: linear-gradient(to left, rgba(45, 45, 45, 0.198), transparent);
+       
+    }
+    
 }
 .text-blue{
     color: #285a8c;
+}
+@media (max-width: 763px) {
+    .text-center-responsive{
+        text-align: center;
+    }
+    .justify{
+        text-align: justify;
+    }
 }
 </style>
