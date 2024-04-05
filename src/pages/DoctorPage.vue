@@ -315,7 +315,7 @@ display: none;
     padding: 10px;
     cursor: pointer;
     z-index: 2;
-    bottom: 45%;
+    bottom: 10%;
 }
 
 .left{

@@ -210,7 +210,7 @@ export default {
             </div>
         </div>
             <div class="container">
-                <div class="row my-5 position-relative">
+                <div class="row my-5 position-relative d-none d-xl-block">
                     <div class="my-card-col">
                         <div class="my-card my-2 px-2" v-for="reviews, index in store.review" :key="index">      
                             <div class="flip-card my-4" >
@@ -231,13 +231,26 @@ export default {
                     </div>
                 </div>
             </div>
+            <div class="container">
+                <div class="row my-5 position-relative d-xl-none">
+                    <div class="col-12 " v-for="reviews, index in store.review" :key="index">
+                        <h5> {{ reviews.titolo }}</h5>
+                            <p> {{ reviews.testo }}</p>
+                            <h6> {{ reviews.autore }}</h6>
+                            <div class="voto"> 
+                                <h6>Voto: <span class="stars">{{ stars(reviews.voto) }}</span></h6>
+                            </div>
+                    </div>
+                </div>
+            </div>
     </main>
 </template>
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
 
     .jumbotron{
-        background-color: #66cc99;
+        
+         background-image: linear-gradient(to bottom, #66cc99, #336699); 
 
         .my-container{
             max-width: 80%;
@@ -255,7 +268,7 @@ export default {
     }
 
     .bg-sponsor{
-        background-color:  #66cc99;
+        background-image: linear-gradient(to top,  #336699, #66cc99);
     }
 
     .bg-grey{
