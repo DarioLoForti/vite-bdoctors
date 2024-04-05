@@ -150,7 +150,7 @@ export default {
                 <div class="row mt-4 mt-md-0">
                     <div class="col-md-2"></div>
                     <div class="col-12 col-md-8" style="white-space: pre-line;">
-                        <h4 class="text-center testo-bianco"><strong>Prestazioni</strong></h4>
+                        <h4 class="text-center testo-bianco mb-4"><strong>Prestazioni</strong></h4>
                         <div class="justify testo-bianco">
                             {{ this.doctor.services }}                       
                         </div>
@@ -170,8 +170,9 @@ export default {
                                 </div>
                             </div>   
                         </div>
-                        <button @click="scrollLeft" class="d-none d-md-block scroll-button left btn-blue"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></button>
-                        <button @click="scrollRight" class="d-none d-md-block scroll-button right btn-blue"><i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i></button>
+                        <button @click="scrollLeft" class="d-none d-md-block scroll-button left ms-2"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></button>
+                        <button @click="scrollRight" class="d-none d-md-block scroll-button right  me-2"><i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i></button>
+                        <!-- <button @click="scrollLeft" class="d-none d-md-block scroll-button left btn-blue"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></button> -->
                     </div>
                 </div>
                 <div class="row my-5 position-relative d-md-none">
@@ -369,20 +370,36 @@ display: none;
 
   .scroll-button {
     position: absolute;
-    background-color: #285a8c;
-    border: 1px solid white;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
+    position: absolute;
+    height: 350px;
+    width: 80px;
     z-index: 2;
-    bottom: 25%;
+    
+    color:  white;
+    border: 0px;   
 }
 
 .left{
     left: 0%;
+    background: linear-gradient(to right, rgba(120, 120, 120, 0.198), transparent);
+    border-top-left-radius: 20px ;
+    border-bottom-left-radius: 20px;
+    &:hover{
+        background: linear-gradient(to right, rgba(45, 45, 45, 0.198), transparent);
+       
+    }
+    
 }
 .right{
     right: 0%;
+    background: linear-gradient(to left,rgba(120, 120, 120, 0.198), transparent);
+    border-top-right-radius: 20px ;
+    border-bottom-right-radius: 20px;
+    &:hover{
+        background: linear-gradient(to left, rgba(45, 45, 45, 0.198), transparent);
+       
+    }
+    
 }
 .message-text{
     font-size: 12px;
