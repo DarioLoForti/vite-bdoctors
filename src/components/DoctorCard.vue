@@ -24,7 +24,8 @@ export default {
                     </h3>
                     <p>{{doctor.city}}</p>
                     <p>
-                        <span>{{parseFloat(doctor.ratings_avg_rating).toFixed(1)}} / 5</span>
+                        <span v-if="doctor.ratings_avg_rating">{{parseFloat(doctor.ratings_avg_rating).toFixed(1)}} / 5</span>
+                        <span v-else>Nessun voto.</span>
                     </p>
                 </div>
             </div>
