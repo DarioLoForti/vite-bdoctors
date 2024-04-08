@@ -81,6 +81,7 @@ export default {
 </script>
 <template lang="">
     <main>
+        <div class="fs-5">
         <div class="jumbotron d-none d-lg-block">
             <div class="my-container d-flex justify-content-between">
                 <img class='image' src="../../public/doctor-7.png" alt="" >
@@ -193,7 +194,7 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="container  rel">
+        <div class="container">
             <div class="row my-5">
                 <div class="col-12 col-md-8">
                     <div class="ms-md-5">
@@ -209,7 +210,7 @@ export default {
                 </div>
             </div>
         </div>
-            <div class="container">
+            <div class="container fs-6">
                 <div class="row my-5 position-relative d-none d-xl-block">
                     <div class="my-card-col">
                         <div class="my-card my-2 px-2" v-for="reviews, index in store.review" :key="index">      
@@ -231,6 +232,7 @@ export default {
                     </div>
                 </div>
             </div>
+        </div>
             <div class="container">
                 <div class="row my-5 position-relative d-xl-none">
                     <h2 class="mb-4">Alcune  vostre recensioni</h2>

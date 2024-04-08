@@ -379,8 +379,7 @@ display: none;
 
   .scroll-button {
     position: absolute;
-    position: absolute;
-    height: 350px;
+    height: 90%;
     width: 80px;
     z-index: 2;
     
