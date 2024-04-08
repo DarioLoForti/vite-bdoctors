@@ -9,6 +9,16 @@ export default {
         return {
             store,
         }
+    },
+    methods: {
+        getUrlImage(image){
+            if(image.includes("https://")){
+                return image;
+            }
+            else{
+                return `${this.store.baseUrl}/storage/${image}`;
+            }
+        },
     }
 }
 </script>
@@ -16,7 +26,7 @@ export default {
     <div class="col-12 col-md-6 col-lg-3"> <!-- :class="doctor.sponsorships.length > 0 ? 'border border-danger' : ''" -->
         <router-link class="text-decoration-none " :to="{name: 'doctor', params: {slug: doctor.slug}}">
             <div class="mb-3 card color-card">
-                <img class="my-img" :src="doctor.image" :alt="doctor.user.name">
+                <img class="my-img" :src="getUrlImage(doctor.image)" :alt="doctor.user.name">
                 <div class="card-body text-white">
                     <h3>
                         {{doctor.user.name}}
