@@ -50,7 +50,7 @@ dropdowns.forEach(dropdown => {
 @use '../styles/generals.scss' as *;
 header{
     width: 100%;
-    background-image: linear-gradient(to top, #66cc99, #336699,);
+    background-image: linear-gradient(to top, #66cc99, #285a8c,);
    
   
     ul{

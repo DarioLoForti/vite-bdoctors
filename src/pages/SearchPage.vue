@@ -154,8 +154,8 @@ export default {
     }
 }
 .bg-green{
-    // background-color: #66cc99;
-    background-image: linear-gradient(to bottom, #66cc99, #a3efc9);
+    background-color: #66cc99;
+    
 }
 .title-color{
     color: white;

@@ -80,15 +80,15 @@ export default {
 }
 </script>
 <template lang="">
-    <main>
+    <main class="bg-green">
         <div class="fs-5">
         <div class="jumbotron d-none d-lg-block">
             <div class="my-container d-flex justify-content-between">
                 <img class='image' src="../../public/doctor-7.png" alt="" >
                     <div class="pt-5">
                         <h1 class="fs-1 my-text">Il tuo dottore a portata di un Click!</h1>
-                        <p class=" text-light fs-5">Filtra le tue ricerche per città e/o specializzazioni. <br>
-                            Leggi le recensioni, osserva i profili e scegli il meglio per te!
+                        <p class=" text-light mt-5 fs-2 text-center">Filtra le tue ricerche <br> per città e/o specializzazioni. <br>
+                            Leggi le recensioni,<br> osserva i profili e <br>scegli il meglio per te!
                         </p>
                     </div>
                 <img class='image' width: src="../../public/doctor-6.png" alt="" style="height: 50%">
@@ -96,16 +96,16 @@ export default {
         </div>
 
         <div class="jumbotron d-lg-none">
-            <div class="container d-flex text-center flex-column py-5">
+            <div class="container d-flex text-center flex-column py-5 text-white">
                 <h1 class="fs-1 my-text">Il tuo dottore a portata di un Click!</h1>
                 <p class=" text-light fs-5">Filtra le tue ricerche per città e/o specializzazioni. <br>
                     Leggi le recensioni, osserva i profili e scegli il meglio per te!
                 </p>
             </div>   
         </div>
-<div class="bg-green">
-        <div class="container">
-            <div class="row py-5">
+
+        <div class="container text-white">
+            <div class="row my-5">
                 <div class="col-12 col-md-8">
                     <div class="ms-md-5">
                         <h2>Sei un Medico o un Centro medico?</h2>
@@ -130,10 +130,10 @@ export default {
                 </div>
             </div>
 
-            <div class="row py-5">
-                <div class="col-12">
-                    <div class="bg-grey p-3">
-                        <h3 class="text-center-responsive">Le specializzazioni più richieste:</h3>
+            <div class="row my-5">
+                <div class="col-12 ">
+                    <div class="bg-white p-3">
+                        <h3 class="text-center-responsive text-blue">Le specializzazioni più richieste:</h3>
                         <div class="row">
                             <div class="col-lg-2 col-md-4 col-sm-6 text-center-responsive" v-for="(specialization, index) in store.specializations" :key="index">
                                 <span class="">
@@ -155,7 +155,7 @@ export default {
             <div v-else class="my-5">
                 Nessun medico sponsorizzato trovato che soddisfi la ricerca.
             </div>
-            <div class="row py-5">
+            <div class="row my-5">
                 <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-3">
                     <h3>Cerca i dottori per città</h3>
                     <span class="justify">Scegli tra oltre 200 000 medici di medicina generale e specialisti. Leggi le recensioni di altri pazienti.</span>
@@ -174,13 +174,12 @@ export default {
                 </div>
             </div>
         </div>
-    </div>
-        <div class="containar-fluid">
-            <div class="row py-5 bg-sponsor">
+        <div class="container bg-white">
+            <div class="row my-5 ">
                 <div class="col-12 col-md-5">
                     <img src="../../public/doctor-3.png" alt="" class="img-fluid">
                 </div>
-                <div class="col-12 col-md-7 mt-md-5 mt-3 text-white ">
+                <div class="col-12 col-md-7 mt-md-5 mt-3 ">
                     <h2 class="text-blue text-center-responsive">Sei un professionista nel settore?</h2>
                     <h3 class="text-center-responsive mb-2">Crea il tuo profilo e raggiungi i pazienti nella tua città.</h3>
                     <ul>
@@ -195,12 +194,11 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="bg-top-footer">
-        <div class="container">
+        <div class="container text-white">
             <div class="row py-5">
                 <div class="col-12 col-md-8">
                     <div class="ms-md-5">
-                        <h2>Dicono di noi</h2>
+                        <h2 >Dicono di noi</h2>
                         <p class="justify">Oltre il 99% di pazienti soddisfatti</p>
                         <p class="justify">BDoctors è il primo sito in Italia di prenotazioni di visite mediche ed esami diagnostici</p>
                         <p class="justify">Crediamo nell'importanza dell'informazione e della trasparenza per aiutare i pazienti a scegliere il medico giusto.</p>
@@ -212,9 +210,8 @@ export default {
                 </div>
             </div>
         </div>
-          
             <div class="container fs-6">
-                <div class="row py-5 position-relative d-none d-xl-block">
+                <div class="row position-relative d-none d-xl-block bg-white">
                     <div class="my-card-col">
                         <div class="my-card my-2 px-2" v-for="reviews, index in store.review" :key="index">      
                             <div class="flip-card my-4" >
@@ -236,8 +233,7 @@ export default {
                 </div>
             </div>
         </div>
-               
-        <div class="container">
+            <div class="container text-white">
                 <div class="row py-5 position-relative d-xl-none">
                     <h2 class="mb-4">Alcune  vostre recensioni</h2>
                     <div class="col-12 mb-4" v-for="reviews, index in store.review" :key="index">
@@ -250,12 +246,19 @@ export default {
                     </div>
                 </div>
             </div>
-        </div>  
     </main>
 </template>
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
 
+.jumbotron.d-none.d-lg-block {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Modifica i valori per ottenere l'effetto desiderato */
+}
+
+/* Aggiungi effetto ombra per la versione mobile (d-lg-none) */
+.jumbotron.d-lg-none {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Modifica i valori per ottenere l'effetto desiderato */
+}
     .jumbotron{
         
          background-image: linear-gradient(to bottom, #66cc99, #336699); 
@@ -274,21 +277,18 @@ export default {
     .my-text{
         color: #285a8c;
     }
-    .bg-top-footer{
 
-        background-image: linear-gradient(to top, #66cc99, #336699,);
-    }
     .bg-sponsor{
-        background-image: linear-gradient(to top,  #336699, #a3efc9);
+        background-image: linear-gradient(to top,  #336699, #66cc99);
     }
     .bg-green{
-        // background-color: #66cc99;
-        background-image: linear-gradient(to bottom, #336699, #a3efc9);
-    }
+     background-color: #66cc99;
+    
+}
     
 
-    .bg-grey{
-        background-color: rgb(234, 234, 234);
+    .bg-white{
+        
         border-radius: 10px;
     }
 
@@ -328,6 +328,7 @@ export default {
     margin-right: 10px;
     overflow-y: hidden;
     max-height: 600px; 
+    border-radius: 10px;
     
    }
    .stars{

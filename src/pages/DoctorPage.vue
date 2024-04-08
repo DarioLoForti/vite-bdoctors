@@ -194,7 +194,7 @@ export default {
                 </div>
                 
             </div>
-            <hr class="mt-5" style="color: white">
+           
         </div>
         
     
@@ -209,8 +209,7 @@ span{
     font-size: 20px;
 }
 .bg-green{
-    // background-color:#285a8c;
-    background-image: linear-gradient(to bottom, #66cc99, #285a8c);
+     background-color: #66cc99;
 }
 .title-color{
     color: #285a8c;
