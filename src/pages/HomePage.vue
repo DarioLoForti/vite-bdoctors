@@ -271,6 +271,7 @@ export default {
     .bg-sponsor{
         background-image: linear-gradient(to top,  #336699, #66cc99);
     }
+    
 
     .bg-grey{
         background-color: rgb(234, 234, 234);

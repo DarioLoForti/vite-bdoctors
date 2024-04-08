@@ -150,6 +150,15 @@ export default {
                 <div class="row mt-4 mt-md-0">
                     <div class="col-md-2"></div>
                     <div class="col-12 col-md-8" style="white-space: pre-line;">
+                        <h4 class="text-center testo-bianco mb-4"><strong>Specializzazioni</strong></h4>
+                        <div class="justify testo-bianco" v-for="specialization, index in this.doctor.specializations" :key="index">
+                            <strong>{{ specialization.name }} </strong>  <br>                    
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4 mt-md-0">
+                    <div class="col-md-2"></div>
+                    <div class="col-12 col-md-8" style="white-space: pre-line;">
                         <h4 class="text-center testo-bianco mb-4"><strong>Prestazioni</strong></h4>
                         <div class="justify testo-bianco">
                             {{ this.doctor.services }}                       
