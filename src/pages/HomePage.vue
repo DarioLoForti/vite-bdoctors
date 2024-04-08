@@ -103,9 +103,9 @@ export default {
                 </p>
             </div>   
         </div>
-
+<div class="bg-green">
         <div class="container">
-            <div class="row my-5">
+            <div class="row py-5">
                 <div class="col-12 col-md-8">
                     <div class="ms-md-5">
                         <h2>Sei un Medico o un Centro medico?</h2>
@@ -130,7 +130,7 @@ export default {
                 </div>
             </div>
 
-            <div class="row my-5">
+            <div class="row py-5">
                 <div class="col-12">
                     <div class="bg-grey p-3">
                         <h3 class="text-center-responsive">Le specializzazioni più richieste:</h3>
@@ -155,7 +155,7 @@ export default {
             <div v-else class="my-5">
                 Nessun medico sponsorizzato trovato che soddisfi la ricerca.
             </div>
-            <div class="row my-5">
+            <div class="row py-5">
                 <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-3">
                     <h3>Cerca i dottori per città</h3>
                     <span class="justify">Scegli tra oltre 200 000 medici di medicina generale e specialisti. Leggi le recensioni di altri pazienti.</span>
@@ -174,8 +174,9 @@ export default {
                 </div>
             </div>
         </div>
+    </div>
         <div class="containar-fluid">
-            <div class="row my-5 bg-sponsor">
+            <div class="row py-5 bg-sponsor">
                 <div class="col-12 col-md-5">
                     <img src="../../public/doctor-3.png" alt="" class="img-fluid">
                 </div>
@@ -194,8 +195,9 @@ export default {
                 </div>
             </div>
         </div>
+        <div class="bg-top-footer">
         <div class="container">
-            <div class="row my-5">
+            <div class="row py-5">
                 <div class="col-12 col-md-8">
                     <div class="ms-md-5">
                         <h2>Dicono di noi</h2>
@@ -210,8 +212,9 @@ export default {
                 </div>
             </div>
         </div>
+          
             <div class="container fs-6">
-                <div class="row my-5 position-relative d-none d-xl-block">
+                <div class="row py-5 position-relative d-none d-xl-block">
                     <div class="my-card-col">
                         <div class="my-card my-2 px-2" v-for="reviews, index in store.review" :key="index">      
                             <div class="flip-card my-4" >
@@ -233,8 +236,9 @@ export default {
                 </div>
             </div>
         </div>
-            <div class="container">
-                <div class="row my-5 position-relative d-xl-none">
+               
+        <div class="container">
+                <div class="row py-5 position-relative d-xl-none">
                     <h2 class="mb-4">Alcune  vostre recensioni</h2>
                     <div class="col-12 mb-4" v-for="reviews, index in store.review" :key="index">
                         <h6> {{ reviews.titolo }}</h6>
@@ -246,6 +250,7 @@ export default {
                     </div>
                 </div>
             </div>
+        </div>  
     </main>
 </template>
 <style lang="scss" scoped>
@@ -269,9 +274,16 @@ export default {
     .my-text{
         color: #285a8c;
     }
+    .bg-top-footer{
 
+        background-image: linear-gradient(to top, #66cc99, #336699,);
+    }
     .bg-sponsor{
-        background-image: linear-gradient(to top,  #336699, #66cc99);
+        background-image: linear-gradient(to top,  #336699, #a3efc9);
+    }
+    .bg-green{
+        // background-color: #66cc99;
+        background-image: linear-gradient(to bottom, #336699, #a3efc9);
     }
     
 
