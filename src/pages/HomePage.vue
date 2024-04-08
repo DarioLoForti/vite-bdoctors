@@ -249,6 +249,9 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
 
+main{
+    overflow-x: hidden;
+}
     .jumbotron{
         
          background-image: linear-gradient(to bottom, #66cc99, #336699); 
