@@ -82,16 +82,22 @@ export default {
 <template lang="">
     <main class="bg-green">
         <div class="fs-5">
-        <div class="jumbotron d-none d-lg-block">
+        <div class="jumbotron d-none d-lg-block position-relative ">
             <div class="my-container d-flex justify-content-between">
-                <img class='image' src="../../public/doctor-7.png" alt="" >
-                    <div class="pt-5">
-                        <h1 class="fs-1 my-text">Il tuo dottore a portata di un Click!</h1>
-                        <p class=" text-light mt-5 fs-2 text-center">Filtra le tue ricerche <br> per città e/o specializzazioni. <br>
-                            Leggi le recensioni,<br> osserva i profili e <br>scegli il meglio per te!
-                        </p>
-                    </div>
-                <img class='image' width: src="../../public/doctor-6.png" alt="" style="height: 50%">
+                <div class="col-3 position-relative ">
+                    <img class='image posizione' src="../../public/doctor-7.png" alt="" >
+
+                </div>
+                <div class="pt-5 col-6">
+                    <h1 class="fs-1 my-text text-center mb-2">Il tuo dottore a portata di un Click!</h1>
+                    <p class=" text-light mt-4 mb-0 fs-2 text-center">Filtra le tue ricerche <br> per città e/o specializzazioni. <br>
+                        Leggi le recensioni,<br> osserva i profili e <br>scegli il meglio per te!
+                    </p>
+                </div>
+                <div class="col-3 position-relative ">
+
+                    <img class='image posizione' width: src="../../public/doctor-6.png" alt="">
+                </div>
             </div>
         </div>
 
@@ -176,10 +182,10 @@ export default {
         </div>
         <div class="container bg-white">
             <div class="row my-5 ">
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-5 visible-img ">
                     <img src="../../public/doctor-3.png" alt="" class="img-fluid">
                 </div>
-                <div class="col-12 col-md-7 mt-md-5 mt-3 ">
+                <div class="col-12 col-md-7 mt-md-5 mt-3 visible-text">
                     <h2 class="text-blue text-center-responsive">Sei un professionista nel settore?</h2>
                     <h3 class="text-center-responsive mb-2">Crea il tuo profilo e raggiungi i pazienti nella tua città.</h3>
                     <ul>
@@ -195,8 +201,8 @@ export default {
             </div>
         </div>
         <div class="container text-white">
-            <div class="row py-5">
-                <div class="col-12 col-md-8">
+            <div class="row py-5 ">
+                <div class="col-12 col-md-8 visible-text">
                     <div class="ms-md-5">
                         <h2 >Dicono di noi</h2>
                         <p class="justify">Oltre il 99% di pazienti soddisfatti</p>
@@ -205,7 +211,7 @@ export default {
                         <p class="justify">Per questo su BDoctors, solo i pazienti che hanno prenotato attraverso il sito e svolto la prestazione possono rilasciare un feedback sul medico: una garanzia sull'affidabilità..</p>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 ">
+                <div class="col-12 col-md-4 visible-img">
                     <img src="../../public/gruppo.png" alt="" class="img-fluid me-5">
                 </div>
             </div>
@@ -266,10 +272,10 @@ export default {
         .my-container{
             max-width: 80%;
             margin: 0 auto;
-            padding-top: 50px;
+            
         }
         .image{
-            width: 25%;
+            width: 100%;
             
         }
     }
@@ -424,4 +430,23 @@ export default {
         text-align: justify;
     }
 }
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+        .visible-img img {
+            display: none;
+        }
+        .visible-img {
+            display: none;
+        }
+        .visible-text{
+            text-align: center;
+            width: 100% !important;
+        }
+    }
+
+    .posizione{
+        position: absolute;
+        bottom: 0;
+        left: 0; 
+    }
 </style>
