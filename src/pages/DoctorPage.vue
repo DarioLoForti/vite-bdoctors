@@ -52,8 +52,16 @@ export default {
             const numStars = (vote).toFixed(0);
             return '★'.repeat(numStars) + '☆'.repeat(5 - numStars);
         },
-        
+        getUrlImage(image){
+            if(image.includes("https://")){
+                return image;
+            }
+            else{
+                return `${this.store.baseUrl}/storage/${image}`;
+            }
+        },
     }
+          
 }
 </script>
 <template lang="">
@@ -71,7 +79,7 @@ export default {
                     <div class="col-12 col-md-6 mb-4 ">
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="image-container raised-effect  justify-content-center">
-                                <img :src="doctor.image" :alt="doctor.user.name">
+                                <img :src="getUrlImage(doctor.image)" :alt="doctor.user.name">
                             </div>
                         </div>
 
@@ -128,14 +136,14 @@ export default {
                         <div class="container my-3 my-md-5">
                             <div class="row">
                                 <div class="col-6 d-flex justify-content-center">
-                                    <h6 class="mt-1 d-none d-md-block ">Invia un messaggio</h6>
+                                    <h6 class="mt-3 d-none d-md-block ">Invia un messaggio</h6>
                                     <form action="http://127.0.0.1:8000/messages/create" method="GET" class="posizione-button">
                                         <input type="hidden" name="doctor_id" :value="this.doctor.id">
                                         <button class="btn btn-sm btn-cerca ms-3" type="submit"><i class="fa-solid fa-message " ></i></button>
                                     </form>
                                 </div>
                                 <div class="col-6 d-flex justify-content-center">
-                                    <h6 class="mt-1 d-none d-md-block">Lascia una recenzione</h6>
+                                    <h6 class="mt-3 d-none d-md-block">Lascia una recenzione</h6>
                                     <form action="http://127.0.0.1:8000/reviews/create" method="GET" class="posizione-button">
                                         <input type="hidden" name="doctor_id" :value="this.doctor.id">
                                         <button class="btn btn-sm btn-cerca ms-3" type="submit"><i class="fa-solid fa-book-open" ></i></button>
@@ -165,7 +173,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="row mt-5 position-relative d-none d-md-block">
+                <div class="row mt-5 position-relative d-none d-md-block" v-if="doctor.reviews.length > 0">
                     <h4 class="text-center mt-3 testo-bianco"><strong>Recensioni</strong></h4>
                     <div class="my-card-col">
                         <div class="my-card my-2 px-2" v-for="review, index in this.doctor.reviews" :key="index">      
@@ -184,7 +192,7 @@ export default {
                         <!-- <button @click="scrollLeft" class="d-none d-md-block scroll-button left btn-blue"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></button> -->
                     </div>
                 </div>
-                <div class="row my-5 position-relative d-md-none">
+                <div class="row my-5 position-relative d-md-none" v-if="doctor.reviews.length > 0">
                     <h4 class="text-center mt-3 testo-bianco"><strong>Recensioni</strong></h4>
                     <div class="col-12 testo-bianco mb-3" v-for="review, index in this.doctor.reviews" :key="index">
                         <h5> {{review.name}}</h5>

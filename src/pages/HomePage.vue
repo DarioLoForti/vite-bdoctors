@@ -85,7 +85,7 @@ export default {
         <div class="jumbotron d-none d-lg-block ">
             <div class="my-container d-flex justify-content-between">
                 <div class="col-3 position-relative ">
-                    <img class='image posizione' src="../../public/doctor-7.png" alt="" >
+                    <img class='image posizione ms-5' src="../../public/doctor-7.png" alt="" >
 
                 </div>
                 <div class="pt-5 col-6">
@@ -94,9 +94,9 @@ export default {
                         Leggi le recensioni,<br> osserva i profili e <br>scegli il meglio per te!
                     </p>
                 </div>
-                <div class="col-3 position-relative ">
+                <div class="col-3 position-relative  ">
 
-                    <img class='image posizione' width: src="../../public/doctor-6.png" alt="">
+                    <img class='image posizione ms-5' width: src="../../public/doctor-6.png" alt="">
                 </div>
             </div>
         </div>
@@ -275,7 +275,7 @@ export default {
             
         }
         .image{
-            width: 80%;
+            width: 70%;
             
             
         }
