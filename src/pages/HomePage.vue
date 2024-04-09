@@ -95,7 +95,7 @@ export default {
         <div class="jumbotron d-lg-none">
             <div class="container d-flex text-center flex-column py-5 text-white">
                 <h1 class="fs-1 my-text">Il tuo dottore a portata di un Click!</h1>
-                <p class=" text-light fs-5">Filtra le tue ricerche per città e/o specializzazioni. <br>
+                <p class=" text-blue fs-5">Filtra le tue ricerche per città e/o specializzazioni. <br>
                     Leggi le recensioni, osserva i profili e scegli il meglio per te!
                 </p>
             </div>   
