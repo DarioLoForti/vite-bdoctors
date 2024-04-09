@@ -120,7 +120,7 @@ export default {
                             <div class="form-group">
                                 <label for="name" class="ms-1 mb-2 text-white fs-5">Conosci già il tuo dottore?</label>
                                 <div class="input-group">
-                                    <input class="form-control" name="namestring" type="text" v-model="this.namestring" @keyup.enter="getDoctors()" placeholder="Inserisci il cognome del dottore, completo o parziale (eg. 'Simone' o 'Si')">
+                                    <input class="form-control" name="namestring" type="text" v-model="this.namestring" @keyup.enter="getDoctors()" placeholder="Inserisci nome e/o cognome del dottore, completo o parziale (eg. 'Simone' o 'Si')">
                                     <button class="btn btn-sm btn-cerca" type="submit" @click="getDoctors()">Cerca!</button>
                                 </div>
                             </div>

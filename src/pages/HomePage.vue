@@ -82,25 +82,16 @@ export default {
 <template lang="">
     <main class="bg-green">
         <div class="fs-5">
-        <div class="jumbotron d-none d-lg-block ">
-            <div class="my-container d-flex justify-content-between">
-                <div class="col-3 position-relative ">
-                    <img class='image posizione ms-5' src="../../public/doctor-7.png" alt="" >
-
-                </div>
-                <div class="pt-5 col-6">
-                    <h1 class="fs-1 my-text text-center mb-2">Il tuo dottore a portata di un Click!</h1>
-                    <p class=" text-light mt-4 mb-0 fs-2 text-center">Filtra le tue ricerche <br> per città e/o specializzazioni. <br>
+        <div class="jumbotron d-none d-lg-block py-5">
+            <div class="my-container d-flex justify-content-end">
+                <div class="py-2 col-6">
+                    <h1 class="fs-1 my-text text-end mb-2">Il tuo dottore a portata di un Click!</h1>
+                    <p class=" text-blue mt-4 mb-0 fs-2 text-end">Filtra le tue ricerche <br> per città e/o specializzazioni. <br>
                         Leggi le recensioni,<br> osserva i profili e <br>scegli il meglio per te!
                     </p>
                 </div>
-                <div class="col-3 position-relative  ">
-
-                    <img class='image posizione ms-5' width: src="../../public/doctor-6.png" alt="">
-                </div>
             </div>
         </div>
-
         <div class="jumbotron d-lg-none">
             <div class="container d-flex text-center flex-column py-5 text-white">
                 <h1 class="fs-1 my-text">Il tuo dottore a portata di un Click!</h1>
@@ -138,7 +129,7 @@ export default {
 
             <div class="row my-5">
                 <div class="col-12 ">
-                    <div class="bg-white p-3">
+                    <div class="bg-white p-3 myshadow">
                         <h3 class="text-center-responsive text-blue">Le specializzazioni più richieste:</h3>
                         <div class="row">
                             <div class="col-lg-2 col-md-4 col-sm-6 text-center-responsive" v-for="(specialization, index) in store.specializations" :key="index">
@@ -180,7 +171,7 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="container bg-white">
+        <div class="container bg-white myshadow">
             <div class="row my-5 ">
                 <div class="col-12 col-md-5 visible-img ">
                     <img src="../../public/doctor-3.png" alt="" class="img-fluid">
@@ -258,16 +249,27 @@ export default {
 @use '../styles/generals.scss' as *;
 
 .jumbotron.d-none.d-lg-block {
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Modifica i valori per ottenere l'effetto desiderato */
+    box-shadow: 0px -5px 6px rgba(0, 0, 0, 0.4),
+     0px 5px 6px rgba(0, 0, 0, 0.4); /* Modifica i valori per ottenere l'effetto desiderato */
 }
 
 /* Aggiungi effetto ombra per la versione mobile (d-lg-none) */
 .jumbotron.d-lg-none {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Modifica i valori per ottenere l'effetto desiderato */
 }
+
+.myshadow{
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
     .jumbotron{
         
-         background-image: linear-gradient(to bottom, #66cc99, #336699); 
+         background-image: url('../../public/Jumbotron.png'); 
+         background-repeat: no-repeat;
+         background-size: cover;
+         background-position: center;
+         text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+               font-weight: bold;
 
         .my-container{
             max-width: 80%;
@@ -422,6 +424,9 @@ export default {
 }
 .text-blue{
     color: #285a8c;
+}
+.text-green{
+    color: #66cc99;
 }
 @media (max-width: 763px) {
     .text-center-responsive{

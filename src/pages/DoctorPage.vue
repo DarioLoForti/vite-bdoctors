@@ -143,7 +143,7 @@ export default {
                                     </form>
                                 </div>
                                 <div class="col-6 d-flex justify-content-center">
-                                    <h6 class="mt-3 d-none d-md-block">Lascia una recenzione</h6>
+                                    <h6 class="mt-3 d-none d-md-block">Lascia una recensione</h6>
                                     <form action="http://127.0.0.1:8000/reviews/create" method="GET" class="posizione-button">
                                         <input type="hidden" name="doctor_id" :value="this.doctor.id">
                                         <button class="btn btn-sm btn-cerca ms-3" type="submit"><i class="fa-solid fa-book-open" ></i></button>
