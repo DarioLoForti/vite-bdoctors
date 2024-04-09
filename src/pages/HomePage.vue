@@ -82,7 +82,7 @@ export default {
 <template lang="">
     <main class="bg-green">
         <div class="fs-5">
-        <div class="jumbotron d-none d-lg-block position-relative ">
+        <div class="jumbotron d-none d-lg-block ">
             <div class="my-container d-flex justify-content-between">
                 <div class="col-3 position-relative ">
                     <img class='image posizione' src="../../public/doctor-7.png" alt="" >
@@ -274,10 +274,16 @@ export default {
             margin: 0 auto;
             
         }
+        @media (max-width: 1461px) {
+            .image{
+                width: 100%;
+            }
+    }
+        @media (min-width: 1461px) {
         .image{
-            width: 100%;
-            
+            width: 80%;
         }
+    }
     }
 
     .my-text{
@@ -449,4 +455,10 @@ export default {
         bottom: 0;
         left: 0; 
     }
+
+    @media (min-width: 1461px) {
+    .image{
+        width: 80%;
+    }
+}
 </style>
